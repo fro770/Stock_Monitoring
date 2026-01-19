@@ -1,5 +1,6 @@
 """
 Главный скрипт системы анализа акций
+Точка входа для запуска анализа акций MOEX
 """
 
 import os
@@ -270,10 +271,6 @@ def run_analysis():
             print(Fore.GREEN + "\n💾 Создание Excel отчета...")
             excel_path = reporter.generate_excel_report()
             
-            # JSON отчет
-            print(Fore.GREEN + "📝 Создание JSON отчета...")
-            json_path = reporter.generate_json_report()
-            
             # CSV отчет
             print(Fore.GREEN + "📊 Создание CSV отчета...")
             csv_path = reporter.generate_csv_report()
@@ -290,10 +287,6 @@ def run_analysis():
                 file_size = os.path.getsize(excel_path) / 1024  # Размер в КБ
                 print(Fore.WHITE + f"📄 Excel отчет: {Fore.GREEN}{excel_name}")
                 print(Fore.WHITE + f"   Размер: {file_size:.1f} КБ")
-                
-            if json_path:
-                json_name = os.path.basename(json_path)
-                print(Fore.WHITE + f"📝 JSON отчет: {Fore.GREEN}{json_name}")
                 
             if csv_path:
                 csv_name = os.path.basename(csv_path)
@@ -611,6 +604,16 @@ def main():
             logger.error(f"Ошибка в главном меню: {e}", exc_info=True)
             print(Fore.RED + f"\n❌ Неожиданная ошибка: {e}")
 
+
+import os
+
+# Добавляем корень проекта в путь
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+
+# Запускаем главный модуль
+from analysis.main import main
 
 if __name__ == "__main__":
     # Проверяем наличие необходимых директорий

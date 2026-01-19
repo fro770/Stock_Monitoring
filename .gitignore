@@ -12,7 +12,7 @@ moex_analysis_env/
 *.log
 
 # Кэш Python
-__pycache__/
+*/__pycache__/
 *.py[cod]
 *$py.class
 
