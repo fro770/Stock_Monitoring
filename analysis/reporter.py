@@ -3,6 +3,8 @@
 """
 
 import os
+import json
+import logging
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -14,6 +16,9 @@ from openpyxl.utils import get_column_letter
 from openpyxl.formatting.rule import FormulaRule
 
 from .core.config import Config
+
+logger = logging.getLogger(__name__)
+
 
 class ReportGenerator:
     """Генератор отчетов в различных форматах с улучшенным форматированием"""
@@ -261,6 +266,82 @@ class ReportGenerator:
             traceback.print_exc()
             return ""
     
+    def _build_dataframe(self) -> pd.DataFrame:
+        """Собирает плоский DataFrame из результатов анализа (для CSV/JSON)."""
+        rows = []
+        for i, r in enumerate(self.results, 1):
+            row = {
+                '№': i,
+                'Тикер': r.get('ticker', ''),
+                'Название': r.get('name', ''),
+                'Тип акции': r.get('type_description', ''),
+                'Текущая цена': r.get('last_price', 0),
+                'Средний рост %': r.get('avg_change_percent', 0),
+                'Средняя уверенность %': round(r.get('avg_confidence', 0) * 100, 1),
+                'Дней данных': r.get('data_points', r.get('days', '')),
+            }
+            for day in self.params.get('prediction_days', []):
+                pred = (r.get('predictions') or {}).get(day) or {}
+                row[f'Цена через {day} дн.'] = pred.get('price', '')
+                row[f'Изменение {day} дн. %'] = pred.get('change_percent', '')
+                row[f'Уверенность {day} дн. %'] = round(pred.get('confidence', 0) * 100, 1) if pred else ''
+            rows.append(row)
+        return pd.DataFrame(rows)
+
+    def generate_csv_report(self) -> str:
+        """Генерирует CSV отчет (плоская таблица результатов анализа)."""
+        try:
+            if not self.results:
+                print(Fore.YELLOW + "⚠️  Нет данных для отчета")
+                return ""
+
+            Config.ensure_directories()
+            filename = f"moex_analysis_{self.timestamp}.csv"
+            filepath = os.path.join(Config.REPORTS_DIR, filename)
+
+            df = self._build_dataframe()
+            # utf-8-sig — чтобы файл корректно открывался в Excel
+            df.to_csv(filepath, index=False, encoding='utf-8-sig')
+
+            logger.info(f"CSV отчет сохранен: {filepath}")
+            return filepath
+
+        except Exception as e:
+            logger.error(f"Ошибка генерации CSV отчета: {e}", exc_info=True)
+            print(Fore.RED + f"❌ Ошибка генерации CSV отчета: {e}")
+            return ""
+
+    def generate_json_report(self) -> str:
+        """Генерирует JSON отчет (полные результаты + параметры анализа)."""
+        try:
+            if not self.results:
+                print(Fore.YELLOW + "⚠️  Нет данных для отчета")
+                return ""
+
+            Config.ensure_directories()
+            filename = f"moex_analysis_{self.timestamp}.json"
+            filepath = os.path.join(Config.REPORTS_DIR, filename)
+
+            payload = {
+                'generated_at': datetime.now().isoformat(timespec='seconds'),
+                'params': {
+                    **{k: v for k, v in self.params.items()},
+                    'prediction_days': list(self.params.get('prediction_days', [])),
+                },
+                'results': self.results,
+            }
+
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2, default=str)
+
+            logger.info(f"JSON отчет сохранен: {filepath}")
+            return filepath
+
+        except Exception as e:
+            logger.error(f"Ошибка генерации JSON отчета: {e}", exc_info=True)
+            print(Fore.RED + f"❌ Ошибка генерации JSON отчета: {e}")
+            return ""
+
     def _add_conditional_formatting(self, ws):
         """Добавляет условное форматирование"""
         # Форматирование для колонки с прогнозом роста

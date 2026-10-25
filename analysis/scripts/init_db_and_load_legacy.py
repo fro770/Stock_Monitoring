@@ -1,6 +1,10 @@
 """
-init_db_and_load.py
-Скрипт для инициализации базы данных и загрузки данных из Excel/CSV файлов
+init_db_and_load_legacy.py  (УСТАРЕЛО, оставлено для совместимости)
+
+Заменён модулем analysis/core/db_manager.py: теперь список тикеров
+загружается напрямую из MOEX ISS API без промежуточных Excel/CSV файлов.
+
+Скрипт инициализирует базу данных и загружает данные из data/moex_all_shares.xlsx|csv
 """
 import sqlite3
 import pandas as pd
@@ -9,7 +13,14 @@ import sys
 from datetime import datetime
 import logging
 
+# Корень проекта (скрипт лежит в analysis/scripts/)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
+os.chdir(PROJECT_ROOT)
+
 # Настройка логирования
+os.makedirs("logs", exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
