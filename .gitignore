@@ -1,5 +1,7 @@
 # Виртуальное окружение Python
-venv/
+.venv_311/
+venv_311/
+.venv_311
 env/
 ENV/
 .venv/
