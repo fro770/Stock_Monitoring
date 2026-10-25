@@ -10,9 +10,6 @@ env/
 ENV/
 .venv/
 .env/
-<<<<<<< HEAD
-venv_py313/
-=======
 venv_py313/
 moex_analysis_env/
 # Файлы базы данных SQLite (опционально, если не хочешь коммитить данные)
@@ -29,4 +26,3 @@ reports/
 
 # VS Code
 .vscode/
->>>>>>> main
