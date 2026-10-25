@@ -1,0 +1,34 @@
+__pycache__/
+*.pyc
+reports/
+
+# Виртуальное окружение Python
+.venv_311/
+venv_311/
+.venv_311
+env/
+ENV/
+.venv/
+.env/
+venv_py313/
+venv_py313/
+moex_analysis_env/
+# Файлы базы данных SQLite (опционально, если не хочешь коммитить данные)
+
+# Логи
+*.log
+reports/
+
+# Кэш Python
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+
+# VS Code
+.vscode/
+models/
+__pycache__/
+*.pyc
+.venv_311/
+

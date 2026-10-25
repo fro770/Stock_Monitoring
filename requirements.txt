@@ -1,0 +1,65 @@
+# ============================================================
+# requirements.txt для Python 3.11.9 (STOCK_MONITORING)
+# Установка:
+#   python3.11 -m venv venv && source venv/bin/activate  (Linux/macOS)
+#   py -3.11 -m venv venv && venv\Scripts\activate       (Windows)
+#   pip install --upgrade pip
+#   pip install -r requirements.txt
+# Для CPU-версии PyTorch используйте:
+#   pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 \
+#       --index-url https://download.pytorch.org/whl/cpu
+# ============================================================
+
+# --- Основные зависимости ---
+certifi==2024.8.30
+charset-normalizer==3.4.4
+colorama==0.4.6
+et_xmlfile==2.0.0
+filelock==3.19.1
+fsspec==2025.9.0
+idna==3.11
+Jinja2==3.1.6
+joblib==1.5.2
+MarkupSafe==2.1.5
+mpmath==1.3.0
+networkx==3.5
+numpy==1.26.4
+openpyxl==3.1.5
+pandas==2.2.3
+pillow==11.3.0
+python-dateutil==2.9.0.post0
+pytz==2025.2
+requests==2.32.5
+scipy==1.13.1
+setuptools==70.2.0
+six==1.17.0
+sympy==1.14.0
+threadpoolctl==3.6.0
+tqdm==4.67.1
+typing_extensions==4.15.0
+tzdata==2025.2
+urllib3==2.6.0
+
+# --- Machine Learning ---
+scikit-learn==1.5.2
+lightgbm==4.5.0
+xgboost==2.1.3
+
+# --- PyTorch (CPU) ---
+torch==2.4.1
+torchvision==0.19.1
+torchaudio==2.4.1
+
+# --- LLM / NLP (FinRL, FinBERT) ---
+transformers==4.44.2
+tokenizers==0.19.1
+safetensors==0.4.5
+huggingface-hub==0.24.6
+regex==2024.5.15
+
+# --- Опционально (GUI) ---
+PyQt5==5.15.11
+
+# --- Графический интерфейс ---
+customtkinter==5.2.2
+packaging==24.1
