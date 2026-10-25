@@ -68,7 +68,8 @@ class BacktestRunner:
     def __init__(self, horizons: List[int] = None, n_predictions: int = 300,
                  min_history: int = 120, mode: int = 3, seed: int = 42,
                  tickers: List[str] = None, apply_weights: bool = True,
-                 progress_cb: Optional[callable] = None):
+                 progress_cb: Optional[callable] = None,
+                 use_stored_weights: bool = False):
         """
         Args:
             horizons: горизонты прогноза в днях (по умолчанию [3,7,14,30])
@@ -77,6 +78,9 @@ class BacktestRunner:
             mode: режим ансамбля (влияет на пул моделей)
             apply_weights: применять ли найденные веса к живому ансамблю
             tickers: ограничить список тикеров (для быстрых тестов)
+            use_stored_weights: оценивать ансамбль с текущими сохранёнными
+                весами из model_weights.json (по умолчанию — нейтральные веса,
+                чтобы измерять модели, а не старые веса)
         """
         self.horizons = horizons or [3, 7, 14, 30]
         self.n_predictions = max(int(n_predictions), len(self.horizons))
@@ -85,6 +89,7 @@ class BacktestRunner:
         self.seed = seed
         self.tickers_filter = tickers
         self.apply_weights = apply_weights
+        self.use_stored_weights = use_stored_weights
         self.progress_cb = progress_cb or (lambda m: None)
 
         rng = np.random.default_rng(seed)
@@ -168,13 +173,16 @@ class BacktestRunner:
         ensemble_stats = {}   # horizon -> counters
         calib_rows = []       # (conf, hit) для проверки калибровки
 
-        # живой ансамбль (тот же код, что в проде) — но с нейтральными весами,
-        # иначе мы измеряли бы старые веса, а не модели
+        # живой ансамбль (тот же код, что в проде) — по умолчанию с нейтральными
+        # весами, иначе мы измеряли бы старые веса, а не модели
         from ..models.ensemble import EnsemblePredictor
-        neutral_store = WeightStore(path=os.path.join(Config.DATA_DIR, "_neutral_weights.json"))
-        neutral_store.data = {'global_weights': {}, 'horizon_weights': {},
-                              'per_ticker_weights': {}, 'calibration': {'slope': 1.0, 'intercept': 0.0}}
-        ens = EnsemblePredictor(mode=self.mode, weight_store=neutral_store)
+        if self.use_stored_weights:
+            ens = EnsemblePredictor(mode=self.mode)  # веса из model_weights.json
+        else:
+            neutral_store = WeightStore(path=os.path.join(Config.DATA_DIR, "_neutral_weights.json"))
+            neutral_store.data = {'global_weights': {}, 'horizon_weights': {},
+                                  'per_ticker_weights': {}, 'calibration': {'slope': 1.0, 'intercept': 0.0}}
+            ens = EnsemblePredictor(mode=self.mode, weight_store=neutral_store)
 
         total = len(plan)
         for k, (ticker, i) in enumerate(plan):
@@ -482,10 +490,12 @@ _attach_bins(BacktestRunner)
 
 
 def run_self_check(n_predictions: int = 300, horizons=None, mode: int = 3,
-                   tickers=None, apply_fixes: bool = True, progress_cb=None) -> Dict:
+                   tickers=None, apply_fixes: bool = True, progress_cb=None,
+                   use_stored_weights: bool = False) -> Dict:
     """Публичная функция для GUI/CLI: прогнать бэктест, вывести %, исправить веса."""
     runner = BacktestRunner(horizons=horizons, n_predictions=n_predictions,
-                            mode=mode, tickers=tickers, progress_cb=progress_cb)
+                            mode=mode, tickers=tickers, progress_cb=progress_cb,
+                            use_stored_weights=use_stored_weights)
     summary = runner.run()
     files = runner.save_reports(summary)
     summary['report_files'] = files

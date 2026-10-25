@@ -343,6 +343,11 @@ class App(ctk.CTk):
         bar.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
         ctk.CTkButton(bar, text="🧪 Полная диагностика", width=200,
                       command=self.on_full_check).pack(side="left", padx=(0, 8))
+        self.btn_backtest = ctk.CTkButton(
+            bar, text="🔁 Самопроверка (бэктест)", width=200,
+            fg_color="#2b6cb0", hover_color="#234e80",
+            command=self.on_run_backtest)
+        self.btn_backtest.pack(side="left", padx=(0, 8))
         ctk.CTkButton(bar, text="📝 Открыть папку логов", width=200,
                       command=lambda: open_path(str(LOGS_DIR))).pack(side="left")
 

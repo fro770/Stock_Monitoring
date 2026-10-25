@@ -1,0 +1,2653 @@
+{
+  "metadata": {
+    "timestamp": "20251204_174811",
+    "generated_at": "2025-12-04T17:48:12.234158",
+    "version": "1.0",
+    "generator": "MOEX Stock Analysis System"
+  },
+  "parameters": {
+    "top_n": 50,
+    "stock_type": 1,
+    "mode": 3,
+    "prediction_days": [
+      7,
+      30
+    ],
+    "min_confidence": 0.8
+  },
+  "results": [
+    {
+      "ticker": "MSRS",
+      "name": "РСетиМР ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 1.43,
+      "data_points": 304,
+      "avg_change_percent": 3.28,
+      "avg_confidence": 0.8345,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 1.45,
+          "change_percent": 1.24,
+          "confidence": 0.867,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.978,
+          "individual_predictions": [
+            {
+              "price": 1.45,
+              "change_percent": 1.45,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 76.59,
+                "volatility": 0.0118,
+                "trend_5d": 0.0026,
+                "trend_20d": 0.005
+              }
+            },
+            {
+              "price": 1.44,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 1.51,
+          "change_percent": 5.31,
+          "confidence": 0.802,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.904,
+          "individual_predictions": [
+            {
+              "price": 1.52,
+              "change_percent": 6.23,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 76.59,
+                "volatility": 0.0118,
+                "trend_5d": 0.0026,
+                "trend_20d": 0.005
+              }
+            },
+            {
+              "price": 1.49,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:58.393789",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "VJGZ",
+      "name": "Варьеган",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 2330.0,
+      "data_points": 269,
+      "avg_change_percent": 2.86,
+      "avg_confidence": 0.828,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 2355.26,
+          "change_percent": 1.08,
+          "confidence": 0.839,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.992,
+          "individual_predictions": [
+            {
+              "price": 2357.06,
+              "change_percent": 1.16,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 62.0,
+                "volatility": 0.0137,
+                "trend_5d": 0.0052,
+                "trend_20d": -0.0
+              }
+            },
+            {
+              "price": 2353.49,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 2438.28,
+          "change_percent": 4.65,
+          "confidence": 0.817,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.967,
+          "individual_predictions": [
+            {
+              "price": 2445.99,
+              "change_percent": 4.98,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 62.0,
+                "volatility": 0.0137,
+                "trend_5d": 0.0052,
+                "trend_20d": -0.0
+              }
+            },
+            {
+              "price": 2430.66,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:08.702615",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "ZAYM",
+      "name": "Займер ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 159.45,
+      "data_points": 310,
+      "avg_change_percent": 2.7,
+      "avg_confidence": 0.8425,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 161.07,
+          "change_percent": 1.02,
+          "confidence": 0.844,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.999,
+          "individual_predictions": [
+            {
+              "price": 161.09,
+              "change_percent": 1.03,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 85.66,
+                "volatility": 0.0067,
+                "trend_5d": 0.0014,
+                "trend_20d": 0.0043
+              }
+            },
+            {
+              "price": 161.06,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 166.41,
+          "change_percent": 4.37,
+          "confidence": 0.841,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.995,
+          "individual_predictions": [
+            {
+              "price": 166.49,
+              "change_percent": 4.42,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 85.66,
+                "volatility": 0.0067,
+                "trend_5d": 0.0014,
+                "trend_20d": 0.0043
+              }
+            },
+            {
+              "price": 166.34,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:11.909129",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "SVAV",
+      "name": "СОЛЛЕРС",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 588.0,
+      "data_points": 310,
+      "avg_change_percent": 2.67,
+      "avg_confidence": 0.8445,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 593.94,
+          "change_percent": 1.01,
+          "confidence": 0.845,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 1.0,
+          "individual_predictions": [
+            {
+              "price": 593.96,
+              "change_percent": 1.01,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 69.2,
+                "volatility": 0.0271,
+                "trend_5d": -0.0028,
+                "trend_20d": 0.0041
+              }
+            },
+            {
+              "price": 593.93,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 613.47,
+          "change_percent": 4.33,
+          "confidence": 0.844,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.999,
+          "individual_predictions": [
+            {
+              "price": 613.55,
+              "change_percent": 4.34,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 69.2,
+                "volatility": 0.0271,
+                "trend_5d": -0.0028,
+                "trend_20d": 0.0041
+              }
+            },
+            {
+              "price": 613.4,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:05.025753",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "PIKK",
+      "name": "ПИК ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 463.6,
+      "data_points": 314,
+      "avg_change_percent": 2.61,
+      "avg_confidence": 0.84,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 468.18,
+          "change_percent": 0.99,
+          "confidence": 0.843,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.998,
+          "individual_predictions": [
+            {
+              "price": 468.08,
+              "change_percent": 0.97,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 65.87,
+                "volatility": 0.0226,
+                "trend_5d": -0.0008,
+                "trend_20d": 0.0077
+              }
+            },
+            {
+              "price": 468.27,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 483.21,
+          "change_percent": 4.23,
+          "confidence": 0.837,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.991,
+          "individual_predictions": [
+            {
+              "price": 482.78,
+              "change_percent": 4.14,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 65.87,
+                "volatility": 0.0226,
+                "trend_5d": -0.0008,
+                "trend_20d": 0.0077
+              }
+            },
+            {
+              "price": 483.63,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:00.626985",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "KMAZ",
+      "name": "КАМАЗ",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 86.6,
+      "data_points": 310,
+      "avg_change_percent": 2.5,
+      "avg_confidence": 0.831,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 87.42,
+          "change_percent": 0.95,
+          "confidence": 0.84,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.994,
+          "individual_predictions": [
+            {
+              "price": 87.36,
+              "change_percent": 0.88,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 77.57,
+                "volatility": 0.0129,
+                "trend_5d": 0.0037,
+                "trend_20d": 0.0029
+              }
+            },
+            {
+              "price": 87.47,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 90.1,
+          "change_percent": 4.05,
+          "confidence": 0.822,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.972,
+          "individual_predictions": [
+            {
+              "price": 89.86,
+              "change_percent": 3.77,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 77.57,
+                "volatility": 0.0129,
+                "trend_5d": 0.0037,
+                "trend_20d": 0.0029
+              }
+            },
+            {
+              "price": 90.34,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:53.871220",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "FESH",
+      "name": "ДВМП ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 52.97,
+      "data_points": 304,
+      "avg_change_percent": 2.36,
+      "avg_confidence": 0.8185,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 53.44,
+          "change_percent": 0.89,
+          "confidence": 0.835,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.988,
+          "individual_predictions": [
+            {
+              "price": 53.38,
+              "change_percent": 0.77,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 65.59,
+                "volatility": 0.0171,
+                "trend_5d": -0.0014,
+                "trend_20d": 0.0032
+              }
+            },
+            {
+              "price": 53.5,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 54.99,
+          "change_percent": 3.82,
+          "confidence": 0.802,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.95,
+          "individual_predictions": [
+            {
+              "price": 54.72,
+              "change_percent": 3.31,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 65.59,
+                "volatility": 0.0171,
+                "trend_5d": -0.0014,
+                "trend_20d": 0.0032
+              }
+            },
+            {
+              "price": 55.26,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:51.105287",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "AVAN",
+      "name": "Авангрд-ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 686.0,
+      "data_points": 274,
+      "avg_change_percent": 2.34,
+      "avg_confidence": 0.817,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 692.06,
+          "change_percent": 0.89,
+          "confidence": 0.834,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.988,
+          "individual_predictions": [
+            {
+              "price": 691.2,
+              "change_percent": 0.76,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 82.14,
+                "volatility": 0.0044,
+                "trend_5d": 0.0041,
+                "trend_20d": 0.0011
+              }
+            },
+            {
+              "price": 692.91,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 711.99,
+          "change_percent": 3.79,
+          "confidence": 0.8,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.946,
+          "individual_predictions": [
+            {
+              "price": 708.29,
+              "change_percent": 3.25,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 82.14,
+                "volatility": 0.0044,
+                "trend_5d": 0.0041,
+                "trend_20d": 0.0011
+              }
+            },
+            {
+              "price": 715.64,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:48.199905",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "KGKC",
+      "name": "КурганГКао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 43.2,
+      "data_points": 202,
+      "avg_change_percent": 2.26,
+      "avg_confidence": 0.8105,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 43.57,
+          "change_percent": 0.86,
+          "confidence": 0.832,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.984,
+          "individual_predictions": [
+            {
+              "price": 43.5,
+              "change_percent": 0.7,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 44.44,
+                "volatility": 0.0125,
+                "trend_5d": -0.0009,
+                "trend_20d": 0.0016
+              }
+            },
+            {
+              "price": 43.64,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 44.79,
+          "change_percent": 3.66,
+          "confidence": 0.789,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.934,
+          "individual_predictions": [
+            {
+              "price": 44.5,
+              "change_percent": 3.0,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 44.44,
+                "volatility": 0.0125,
+                "trend_5d": -0.0009,
+                "trend_20d": 0.0016
+              }
+            },
+            {
+              "price": 45.07,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:53.463126",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "ELMT",
+      "name": "iЭлемент",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 0.11,
+      "data_points": 312,
+      "avg_change_percent": 2.22,
+      "avg_confidence": 0.8485,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 0.11,
+          "change_percent": 0.84,
+          "confidence": 0.872,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.984,
+          "individual_predictions": [
+            {
+              "price": 0.11,
+              "change_percent": 0.68,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.44,
+                "volatility": 0.0098,
+                "trend_5d": -0.0001,
+                "trend_20d": 0.0016
+              }
+            },
+            {
+              "price": 0.11,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 0.12,
+          "change_percent": 3.6,
+          "confidence": 0.825,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.93,
+          "individual_predictions": [
+            {
+              "price": 0.12,
+              "change_percent": 2.93,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.44,
+                "volatility": 0.0098,
+                "trend_5d": -0.0001,
+                "trend_20d": 0.0016
+              }
+            },
+            {
+              "price": 0.12,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:50.695177",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "MTSS",
+      "name": "МТС-ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 213.1,
+      "data_points": 313,
+      "avg_change_percent": 2.18,
+      "avg_confidence": 0.8035,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 214.86,
+          "change_percent": 0.83,
+          "confidence": 0.829,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.982,
+          "individual_predictions": [
+            {
+              "price": 214.46,
+              "change_percent": 0.64,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 62.81,
+                "volatility": 0.0089,
+                "trend_5d": -0.0014,
+                "trend_20d": 0.0029
+              }
+            },
+            {
+              "price": 215.25,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 220.63,
+          "change_percent": 3.53,
+          "confidence": 0.778,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.92,
+          "individual_predictions": [
+            {
+              "price": 218.92,
+              "change_percent": 2.73,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 62.81,
+                "volatility": 0.0089,
+                "trend_5d": -0.0014,
+                "trend_20d": 0.0029
+              }
+            },
+            {
+              "price": 222.31,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:58.718905",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "WTCM",
+      "name": "ЦМТ ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 13.7,
+      "data_points": 272,
+      "avg_change_percent": 2.14,
+      "avg_confidence": 0.8,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 13.81,
+          "change_percent": 0.81,
+          "confidence": 0.828,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.98,
+          "individual_predictions": [
+            {
+              "price": 13.78,
+              "change_percent": 0.61,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 70.59,
+                "volatility": 0.013,
+                "trend_5d": 0.0007,
+                "trend_20d": 0.0037
+              }
+            },
+            {
+              "price": 13.84,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 14.18,
+          "change_percent": 3.47,
+          "confidence": 0.772,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.914,
+          "individual_predictions": [
+            {
+              "price": 14.06,
+              "change_percent": 2.6,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 70.59,
+                "volatility": 0.013,
+                "trend_5d": 0.0007,
+                "trend_20d": 0.0037
+              }
+            },
+            {
+              "price": 14.29,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:11.156310",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "TTLK",
+      "name": "Таттел. ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 0.59,
+      "data_points": 288,
+      "avg_change_percent": 2.11,
+      "avg_confidence": 0.8395,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 0.59,
+          "change_percent": 0.8,
+          "confidence": 0.869,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.98,
+          "individual_predictions": [
+            {
+              "price": 0.59,
+              "change_percent": 0.61,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.12,
+                "volatility": 0.0127,
+                "trend_5d": 0.0003,
+                "trend_20d": 0.0006
+              }
+            },
+            {
+              "price": 0.59,
+              "change_percent": 1.01,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 0.6,
+          "change_percent": 3.42,
+          "confidence": 0.81,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.914,
+          "individual_predictions": [
+            {
+              "price": 0.6,
+              "change_percent": 2.59,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.12,
+                "volatility": 0.0127,
+                "trend_5d": 0.0003,
+                "trend_20d": 0.0006
+              }
+            },
+            {
+              "price": 0.61,
+              "change_percent": 4.32,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:06.971874",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "OZPH",
+      "name": "iОзонФарм",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 50.65,
+      "data_points": 304,
+      "avg_change_percent": -0.8,
+      "avg_confidence": 0.8035,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 50.5,
+          "change_percent": -0.3,
+          "confidence": 0.856,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.964,
+          "individual_predictions": [
+            {
+              "price": 50.67,
+              "change_percent": 0.04,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 55.43,
+                "volatility": 0.0077,
+                "trend_5d": -0.0015,
+                "trend_20d": 0.0004
+              }
+            },
+            {
+              "price": 50.31,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 50.0,
+          "change_percent": -1.29,
+          "confidence": 0.751,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.847,
+          "individual_predictions": [
+            {
+              "price": 50.74,
+              "change_percent": 0.18,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 55.43,
+                "volatility": 0.0077,
+                "trend_5d": -0.0015,
+                "trend_20d": 0.0004
+              }
+            },
+            {
+              "price": 49.19,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:00.371531",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "NAUK",
+      "name": "iНПОНаука",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 441.5,
+      "data_points": 272,
+      "avg_change_percent": -0.98,
+      "avg_confidence": 0.8185,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 439.87,
+          "change_percent": -0.37,
+          "confidence": 0.861,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.971,
+          "individual_predictions": [
+            {
+              "price": 441.1,
+              "change_percent": -0.09,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 48.84,
+                "volatility": 0.0128,
+                "trend_5d": -0.001,
+                "trend_20d": -0.0007
+              }
+            },
+            {
+              "price": 438.53,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 434.52,
+          "change_percent": -1.58,
+          "confidence": 0.776,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.875,
+          "individual_predictions": [
+            {
+              "price": 439.8,
+              "change_percent": -0.38,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 48.84,
+                "volatility": 0.0128,
+                "trend_5d": -0.001,
+                "trend_20d": -0.0007
+              }
+            },
+            {
+              "price": 428.78,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:58.786513",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "ROLO",
+      "name": "Русолово",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 0.51,
+      "data_points": 294,
+      "avg_change_percent": -1.32,
+      "avg_confidence": 0.8065,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 0.5,
+          "change_percent": -0.5,
+          "confidence": 0.831,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.983,
+          "individual_predictions": [
+            {
+              "price": 0.5,
+              "change_percent": -0.33,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 58.89,
+                "volatility": 0.0101,
+                "trend_5d": -0.0022,
+                "trend_20d": 0.0007
+              }
+            },
+            {
+              "price": 0.5,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 0.49,
+          "change_percent": -2.14,
+          "confidence": 0.782,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.926,
+          "individual_predictions": [
+            {
+              "price": 0.5,
+              "change_percent": -1.39,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 58.89,
+                "volatility": 0.0101,
+                "trend_5d": -0.0022,
+                "trend_20d": 0.0007
+              }
+            },
+            {
+              "price": 0.49,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:01.979952",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "NKNCP",
+      "name": "НКНХ ап",
+      "sectype": "2",
+      "type_description": "Привилегированные акции",
+      "exchange": "MOEX",
+      "last_price": 62.6,
+      "data_points": 288,
+      "avg_change_percent": -1.36,
+      "avg_confidence": 0.8515,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 62.28,
+          "change_percent": -0.51,
+          "confidence": 0.874,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.985,
+          "individual_predictions": [
+            {
+              "price": 62.37,
+              "change_percent": -0.37,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 47.28,
+                "volatility": 0.0052,
+                "trend_5d": -0.0023,
+                "trend_20d": -0.0006
+              }
+            },
+            {
+              "price": 62.18,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 61.22,
+          "change_percent": -2.2,
+          "confidence": 0.829,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.935,
+          "individual_predictions": [
+            {
+              "price": 61.61,
+              "change_percent": -1.58,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 47.28,
+                "volatility": 0.0052,
+                "trend_5d": -0.0023,
+                "trend_20d": -0.0006
+              }
+            },
+            {
+              "price": 60.8,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:59.104017",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "MRKK",
+      "name": "Россети СК",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 16.52,
+      "data_points": 274,
+      "avg_change_percent": -1.43,
+      "avg_confidence": 0.816,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 16.43,
+          "change_percent": -0.54,
+          "confidence": 0.834,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.987,
+          "individual_predictions": [
+            {
+              "price": 16.45,
+              "change_percent": -0.41,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 21.82,
+                "volatility": 0.0075,
+                "trend_5d": -0.0036,
+                "trend_20d": -0.0024
+              }
+            },
+            {
+              "price": 16.41,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 16.13,
+          "change_percent": -2.32,
+          "confidence": 0.798,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.944,
+          "individual_predictions": [
+            {
+              "price": 16.23,
+              "change_percent": -1.76,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 21.82,
+                "volatility": 0.0075,
+                "trend_5d": -0.0036,
+                "trend_20d": -0.0024
+              }
+            },
+            {
+              "price": 16.04,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:57.339350",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "MGKL",
+      "name": "МГКЛ",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 2.39,
+      "data_points": 309,
+      "avg_change_percent": -1.46,
+      "avg_confidence": 0.8605,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 2.38,
+          "change_percent": -0.55,
+          "confidence": 0.877,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.988,
+          "individual_predictions": [
+            {
+              "price": 2.38,
+              "change_percent": -0.44,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 41.08,
+                "volatility": 0.0066,
+                "trend_5d": -0.0025,
+                "trend_20d": -0.0008
+              }
+            },
+            {
+              "price": 2.38,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 2.34,
+          "change_percent": -2.37,
+          "confidence": 0.844,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.951,
+          "individual_predictions": [
+            {
+              "price": 2.35,
+              "change_percent": -1.9,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 41.08,
+                "volatility": 0.0066,
+                "trend_5d": -0.0025,
+                "trend_20d": -0.0008
+              }
+            },
+            {
+              "price": 2.33,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:57.220052",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "VEON-RX",
+      "name": "VEON",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 78.2,
+      "data_points": 256,
+      "avg_change_percent": -1.64,
+      "avg_confidence": 0.833,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 77.71,
+          "change_percent": -0.62,
+          "confidence": 0.84,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.994,
+          "individual_predictions": [
+            {
+              "price": 77.76,
+              "change_percent": -0.56,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.96,
+                "volatility": 0.0337,
+                "trend_5d": -0.0042,
+                "trend_20d": 0.0028
+              }
+            },
+            {
+              "price": 77.67,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 76.13,
+          "change_percent": -2.65,
+          "confidence": 0.826,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.977,
+          "individual_predictions": [
+            {
+              "price": 76.31,
+              "change_percent": -2.42,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.96,
+                "volatility": 0.0337,
+                "trend_5d": -0.0042,
+                "trend_20d": 0.0028
+              }
+            },
+            {
+              "price": 75.95,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:08.325275",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "ROST",
+      "name": "РОСИНТЕРао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 103.0,
+      "data_points": 272,
+      "avg_change_percent": -1.72,
+      "avg_confidence": 0.8405,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 102.33,
+          "change_percent": -0.65,
+          "confidence": 0.843,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.998,
+          "individual_predictions": [
+            {
+              "price": 102.35,
+              "change_percent": -0.63,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 46.87,
+                "volatility": 0.0102,
+                "trend_5d": -0.0033,
+                "trend_20d": 0.0006
+              }
+            },
+            {
+              "price": 102.31,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 100.12,
+          "change_percent": -2.8,
+          "confidence": 0.838,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.992,
+          "individual_predictions": [
+            {
+              "price": 100.21,
+              "change_percent": -2.71,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 46.87,
+                "volatility": 0.0102,
+                "trend_5d": -0.0033,
+                "trend_20d": 0.0006
+              }
+            },
+            {
+              "price": 100.03,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:02.068080",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "JNOSP",
+      "name": "Слав-ЯНОСп",
+      "sectype": "2",
+      "type_description": "Привилегированные акции",
+      "exchange": "MOEX",
+      "last_price": 9.42,
+      "data_points": 270,
+      "avg_change_percent": -1.77,
+      "avg_confidence": 0.8865,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 9.36,
+          "change_percent": -0.67,
+          "confidence": 0.887,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 1.0,
+          "individual_predictions": [
+            {
+              "price": 9.36,
+              "change_percent": -0.67,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 59.32,
+                "volatility": 0.0136,
+                "trend_5d": -0.0015,
+                "trend_20d": -0.0015
+              }
+            },
+            {
+              "price": 9.36,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 9.15,
+          "change_percent": -2.87,
+          "confidence": 0.886,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.999,
+          "individual_predictions": [
+            {
+              "price": 9.15,
+              "change_percent": -2.86,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 59.32,
+                "volatility": 0.0136,
+                "trend_5d": -0.0015,
+                "trend_20d": -0.0015
+              }
+            },
+            {
+              "price": 9.15,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:53.097566",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "PAZA",
+      "name": "ПавлАвт ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 9760.0,
+      "data_points": 265,
+      "avg_change_percent": -1.88,
+      "avg_confidence": 0.879,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 9690.88,
+          "change_percent": -0.71,
+          "confidence": 0.884,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.996,
+          "individual_predictions": [
+            {
+              "price": 9687.63,
+              "change_percent": -0.74,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 48.28,
+                "volatility": 0.0134,
+                "trend_5d": -0.0008,
+                "trend_20d": -0.0013
+              }
+            },
+            {
+              "price": 9694.41,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 9463.76,
+          "change_percent": -3.04,
+          "confidence": 0.874,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.985,
+          "individual_predictions": [
+            {
+              "price": 9449.83,
+              "change_percent": -3.18,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 48.28,
+                "volatility": 0.0134,
+                "trend_5d": -0.0008,
+                "trend_20d": -0.0013
+              }
+            },
+            {
+              "price": 9478.91,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:00.262242",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "BRZL",
+      "name": "БурЗолото",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 1414.0,
+      "data_points": 274,
+      "avg_change_percent": -1.94,
+      "avg_confidence": 0.873,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 1403.61,
+          "change_percent": -0.73,
+          "confidence": 0.882,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.994,
+          "individual_predictions": [
+            {
+              "price": 1402.79,
+              "change_percent": -0.79,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 40.68,
+                "volatility": 0.0079,
+                "trend_5d": -0.0032,
+                "trend_20d": -0.0007
+              }
+            },
+            {
+              "price": 1404.5,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 1369.46,
+          "change_percent": -3.15,
+          "confidence": 0.864,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.974,
+          "individual_predictions": [
+            {
+              "price": 1365.95,
+              "change_percent": -3.4,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 40.68,
+                "volatility": 0.0079,
+                "trend_5d": -0.0032,
+                "trend_20d": -0.0007
+              }
+            },
+            {
+              "price": 1373.28,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:48.672840",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "UGLD",
+      "name": "ЮГК",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 0.47,
+      "data_points": 305,
+      "avg_change_percent": -1.96,
+      "avg_confidence": 0.829,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 0.47,
+          "change_percent": -0.74,
+          "confidence": 0.839,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.993,
+          "individual_predictions": [
+            {
+              "price": 0.47,
+              "change_percent": -0.81,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.67,
+                "volatility": 0.0097,
+                "trend_5d": -0.0035,
+                "trend_20d": 0.0006
+              }
+            },
+            {
+              "price": 0.47,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 0.46,
+          "change_percent": -3.18,
+          "confidence": 0.819,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.97,
+          "individual_predictions": [
+            {
+              "price": 0.45,
+              "change_percent": -3.49,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 52.67,
+                "volatility": 0.0097,
+                "trend_5d": -0.0035,
+                "trend_20d": 0.0006
+              }
+            },
+            {
+              "price": 0.46,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:07.377591",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "KZOS",
+      "name": "ОргСинт ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 64.9,
+      "data_points": 288,
+      "avg_change_percent": -2.02,
+      "avg_confidence": 0.8245,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 64.4,
+          "change_percent": -0.76,
+          "confidence": 0.837,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.99,
+          "individual_predictions": [
+            {
+              "price": 64.34,
+              "change_percent": -0.86,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 59.57,
+                "volatility": 0.0088,
+                "trend_5d": -0.0052,
+                "trend_20d": 0.0014
+              }
+            },
+            {
+              "price": 64.46,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 62.78,
+          "change_percent": -3.27,
+          "confidence": 0.812,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.96,
+          "individual_predictions": [
+            {
+              "price": 62.52,
+              "change_percent": -3.67,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 59.57,
+                "volatility": 0.0088,
+                "trend_5d": -0.0052,
+                "trend_20d": 0.0014
+              }
+            },
+            {
+              "price": 63.03,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:47:54.619865",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "SAGOP",
+      "name": "СамарЭн-ап",
+      "sectype": "2",
+      "type_description": "Привилегированные акции",
+      "exchange": "MOEX",
+      "last_price": 2.65,
+      "data_points": 274,
+      "avg_change_percent": -2.04,
+      "avg_confidence": 0.8635,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 2.62,
+          "change_percent": -0.77,
+          "confidence": 0.878,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.99,
+          "individual_predictions": [
+            {
+              "price": 2.62,
+              "change_percent": -0.87,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 45.45,
+                "volatility": 0.0172,
+                "trend_5d": -0.0021,
+                "trend_20d": -0.0015
+              }
+            },
+            {
+              "price": 2.63,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 2.56,
+          "change_percent": -3.32,
+          "confidence": 0.849,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.958,
+          "individual_predictions": [
+            {
+              "price": 2.55,
+              "change_percent": -3.73,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 45.45,
+                "volatility": 0.0172,
+                "trend_5d": -0.0021,
+                "trend_20d": -0.0015
+              }
+            },
+            {
+              "price": 2.57,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:03.062183",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "YKEN",
+      "name": "Якутскэнрг",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 0.42,
+      "data_points": 273,
+      "avg_change_percent": -2.09,
+      "avg_confidence": 0.8175,
+      "model_consistency": 1.0,
+      "predictions": {
+        "day_7": {
+          "price": 0.42,
+          "change_percent": -0.79,
+          "confidence": 0.834,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.988,
+          "individual_predictions": [
+            {
+              "price": 0.42,
+              "change_percent": -0.92,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 53.85,
+                "volatility": 0.0098,
+                "trend_5d": -0.0047,
+                "trend_20d": 0.001
+              }
+            },
+            {
+              "price": 0.42,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 0.41,
+          "change_percent": -3.4,
+          "confidence": 0.801,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.948,
+          "individual_predictions": [
+            {
+              "price": 0.41,
+              "change_percent": -3.93,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 53.85,
+                "volatility": 0.0098,
+                "trend_5d": -0.0047,
+                "trend_20d": 0.001
+              }
+            },
+            {
+              "price": 0.41,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:11.471560",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "RTGZ",
+      "name": "ГР Ростов",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 43000.0,
+      "data_points": 243,
+      "avg_change_percent": -2.26,
+      "avg_confidence": 0.8035,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 42632.06,
+          "change_percent": -0.85,
+          "confidence": 0.829,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.982,
+          "individual_predictions": [
+            {
+              "price": 42552.14,
+              "change_percent": -1.04,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 45.16,
+                "volatility": 0.0145,
+                "trend_5d": -0.0045,
+                "trend_20d": 0.0001
+              }
+            },
+            {
+              "price": 42711.04,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 41423.12,
+          "change_percent": -3.67,
+          "confidence": 0.778,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.921,
+          "individual_predictions": [
+            {
+              "price": 41080.61,
+              "change_percent": -4.46,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 45.16,
+                "volatility": 0.0145,
+                "trend_5d": -0.0045,
+                "trend_20d": 0.0001
+              }
+            },
+            {
+              "price": 41761.6,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:02.280601",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "RTKM",
+      "name": "Ростел -ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 58.12,
+      "data_points": 314,
+      "avg_change_percent": -2.26,
+      "avg_confidence": 0.804,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 57.63,
+          "change_percent": -0.85,
+          "confidence": 0.829,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.982,
+          "individual_predictions": [
+            {
+              "price": 57.52,
+              "change_percent": -1.04,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 56.0,
+                "volatility": 0.013,
+                "trend_5d": -0.0044,
+                "trend_20d": 0.0002
+              }
+            },
+            {
+              "price": 57.73,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 55.99,
+          "change_percent": -3.66,
+          "confidence": 0.779,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.922,
+          "individual_predictions": [
+            {
+              "price": 55.53,
+              "change_percent": -4.45,
+              "confidence": 0.84,
+              "model": "trend",
+              "indicators": {
+                "rsi": 56.0,
+                "volatility": 0.013,
+                "trend_5d": -0.0044,
+                "trend_20d": 0.0002
+              }
+            },
+            {
+              "price": 56.45,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:02.451753",
+      "has_enough_data": true
+    },
+    {
+      "ticker": "SAGO",
+      "name": "СамарЭн-ао",
+      "sectype": "1",
+      "type_description": "Обыкновенные акции",
+      "exchange": "MOEX",
+      "last_price": 2.67,
+      "data_points": 274,
+      "avg_change_percent": -2.44,
+      "avg_confidence": 0.8305,
+      "model_consistency": 0.99,
+      "predictions": {
+        "day_7": {
+          "price": 2.64,
+          "change_percent": -0.92,
+          "confidence": 0.866,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.976,
+          "individual_predictions": [
+            {
+              "price": 2.64,
+              "change_percent": -1.15,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 48.0,
+                "volatility": 0.011,
+                "trend_5d": -0.0033,
+                "trend_20d": -0.001
+              }
+            },
+            {
+              "price": 2.65,
+              "change_percent": -0.67,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        },
+        "day_30": {
+          "price": 2.56,
+          "change_percent": -3.96,
+          "confidence": 0.795,
+          "model": "ensemble_3",
+          "models_used": [
+            "trend",
+            "finrl_enhanced"
+          ],
+          "consistency": 0.896,
+          "individual_predictions": [
+            {
+              "price": 2.54,
+              "change_percent": -4.95,
+              "confidence": 0.924,
+              "model": "trend",
+              "indicators": {
+                "rsi": 48.0,
+                "volatility": 0.011,
+                "trend_5d": -0.0033,
+                "trend_20d": -0.001
+              }
+            },
+            {
+              "price": 2.59,
+              "change_percent": -2.88,
+              "confidence": 0.85,
+              "model": "finrl_enhanced",
+              "note": "Использован улучшенный трендовый анализ (FinRL модель в разработке)"
+            }
+          ]
+        }
+      },
+      "models_used": [
+        "trend",
+        "finrl_enhanced"
+      ],
+      "analysis_timestamp": "2025-12-04T17:48:02.851397",
+      "has_enough_data": true
+    }
+  ],
+  "statistics": {
+    "total_tickers": 31,
+    "avg_growth": 0.02774193548387111,
+    "avg_confidence": 0.8322258064516128,
+    "median_growth": -1.32,
+    "positive_count": 13,
+    "negative_count": 18,
+    "neutral_count": 0,
+    "top_ticker": "MSRS",
+    "top_growth": 3.28,
+    "worst_ticker": "SAGO",
+    "worst_growth": -2.44
+  },
+  "distribution": {
+    "growth_ranges": {
+      "very_positive": 0,
+      "positive": 0,
+      "slightly_positive": 13,
+      "neutral": 0,
+      "slightly_negative": 18,
+      "negative": 0,
+      "very_negative": 0
+    },
+    "confidence_ranges": {
+      "high": 31,
+      "medium": 0,
+      "low": 0
+    }
+  }
+}

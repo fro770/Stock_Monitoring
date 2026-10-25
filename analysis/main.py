@@ -57,6 +57,7 @@ def print_menu():
     print(Fore.WHITE + "  3. 📥 Только загрузка тикеров")
     print(Fore.WHITE + "  4. 🚀 Быстрый анализ (топ-20)")
     print(Fore.WHITE + "  5. ⚙️  Настройки")
+    print(Fore.WHITE + "  6. 🧪 Самопроверка (бэктест с корректировкой весов)")
     print(Fore.WHITE + "  0. ❌ Выход")
     print(Fore.GREEN + "─" * 50)
 
@@ -395,6 +396,51 @@ def run_validation():
         print(Fore.RED + f"❌ Ошибка проверки: {e}")
 
 
+def run_backtest_interactive():
+    """Пункт меню: самопроверка (walk-forward бэктест) с корректировкой весов."""
+    print(Fore.CYAN + "\n🧪 САМОПРОВЕРКА (БЭКТЕСТ)")
+    print(Fore.CYAN + "─" * 50)
+    try:
+        n_raw = input(Fore.WHITE + "Сколько предсказаний сделать? (по умолчанию 300, Enter = 300): ").strip()
+        n_predictions = int(n_raw) if n_raw else 300
+    except ValueError:
+        n_predictions = 300
+    try:
+        mode_raw = input(Fore.WHITE + "Пул моделей 1/2/3 (Enter = 3, все модели): ").strip()
+        mode = int(mode_raw) if mode_raw in ('1', '2', '3') else 3
+    except ValueError:
+        mode = 3
+
+    from analysis.core.backtest import run_self_check
+
+    def progress(msg):
+        print(Fore.YELLOW + f"  {msg}")
+
+    try:
+        summary = run_self_check(n_predictions=n_predictions, mode=mode,
+                                 apply_fixes=True, progress_cb=progress)
+        ov = summary['overall']
+        print(Fore.GREEN + "\n✅ Самопроверка завершена:")
+        print(Fore.WHITE + f"  Предсказаний выполнено : {ov['total_predictions']}")
+        print(Fore.WHITE + f"  Точность направления   : {ov['direction_accuracy']:.1%}")
+        print(Fore.WHITE + f"  Skill vs naive         : {ov['skill_vs_naive']:+.1%}")
+        for name, rep in (summary.get('by_model') or {}).items():
+            print(Fore.WHITE + f"    • {name:<16} точность {rep['direction_accuracy']:.1%}, "
+                  f"уверенность {rep['avg_confidence']:.1%}")
+        for note in summary.get('notes', []):
+            print(Fore.CYAN + f"  {note}")
+        files = summary.get('report_files') or {}
+        if files:
+            print(Fore.WHITE + "  Отчёты: " + ", ".join(files.values()))
+        print(Fore.GREEN + "  ✔ Веса моделей скорректированы в data/model_weights.json")
+    except RuntimeError as e:
+        print(Fore.RED + f"\n❌ {e}")
+        print(Fore.YELLOW + "➤ Сначала выполните первый запуск / обновление истории данных.")
+    except Exception as e:
+        logger.error(f"Ошибка бэктеста: {e}", exc_info=True)
+        print(Fore.RED + f"\n❌ Ошибка самопроверки: {e}")
+
+
 def run_quick_analysis():
     """Запускает быстрый анализ (топ-20)"""
     print(Fore.CYAN + "\n🚀 БЫСТРЫЙ АНАЛИЗ (ТОП-20)")
@@ -661,7 +707,7 @@ def cli_main():
         try:
             print_menu()
 
-            choice = input(Fore.YELLOW + "🎯 Ваш выбор (0-5): ").strip()
+            choice = input(Fore.YELLOW + "🎯 Ваш выбор (0-6): ").strip()
 
             if choice == '0':
                 print(Fore.CYAN + "\n👋 До свидания!")
@@ -676,6 +722,8 @@ def cli_main():
                 run_quick_analysis()
             elif choice == '5':
                 show_settings()
+            elif choice == '6':
+                run_backtest_interactive()
             else:
                 print(Fore.RED + "❌ Неверный выбор. Попробуйте снова.")
 

@@ -1,0 +1,416 @@
+2025-12-03 18:56:48,628 - __main__ - INFO - Начинаем создание Excel-файла...
+2025-12-03 18:56:48,628 - __main__ - INFO - Получено 259 инструментов
+2025-12-03 18:56:48,631 - __main__ - INFO - Всего инструментов: 259
+2025-12-03 18:56:48,632 - __main__ - INFO - Обыкновенных акций: 210
+2025-12-03 18:56:48,632 - __main__ - INFO - Привилегированных акций: 48
+2025-12-03 18:56:48,632 - __main__ - INFO - Депозитарных расписок: 1
+2025-12-03 18:56:49,112 - __main__ - INFO - Файл успешно сохранен: moex_all_shares.xlsx
+2026-01-19 17:00:39,667 - make_excel - INFO - Начинаем создание Excel-файла...
+2026-01-19 17:00:39,794 - make_excel - INFO - Получено 259 инструментов
+2026-01-19 17:00:39,798 - make_excel - INFO - Всего инструментов: 259
+2026-01-19 17:00:39,799 - make_excel - INFO - Обыкновенных акций: 210
+2026-01-19 17:00:39,799 - make_excel - INFO - Привилегированных акций: 48
+2026-01-19 17:00:39,800 - make_excel - INFO - Депозитарных расписок: 1
+2026-01-19 17:00:40,300 - make_excel - INFO - Файл успешно сохранен: data\moex_all_shares.xlsx
+2026-01-19 17:01:03,057 - analysis.optimized_analyzer - INFO - Загружен кэш из cache/analysis_cache.json
+2026-01-19 17:01:03,058 - analysis.optimized_analyzer - INFO - Кэш-хит для ABIO (1 дней)
+2026-01-19 17:01:03,058 - analysis.optimized_analyzer - INFO - Кэш-хит для ABIO (30 дней)
+2026-01-19 17:01:03,059 - analysis.optimized_analyzer - INFO - Кэш-хит для ABRD (1 дней)
+2026-01-19 17:01:03,059 - analysis.optimized_analyzer - INFO - Кэш-хит для AFKS (1 дней)
+2026-01-19 17:01:03,060 - analysis.optimized_analyzer - INFO - Кэш-хит для ABRD (30 дней)
+2026-01-19 17:01:03,060 - analysis.optimized_analyzer - INFO - Кэш-хит для AFLT (1 дней)
+2026-01-19 17:01:03,060 - analysis.optimized_analyzer - INFO - Кэш-хит для AFKS (30 дней)
+2026-01-19 17:01:03,061 - analysis.optimized_analyzer - INFO - Кэш-хит для AKRN (1 дней)
+2026-01-19 17:01:03,061 - analysis.core.moex_client - INFO - Загрузка истории для ABIO (720 дней)
+2026-01-19 17:01:03,062 - analysis.optimized_analyzer - INFO - Кэш-хит для ALRS (1 дней)
+2026-01-19 17:01:03,063 - analysis.optimized_analyzer - INFO - Кэш-хит для AFLT (30 дней)
+2026-01-19 17:01:03,064 - analysis.core.moex_client - INFO - Загрузка истории для ABRD (720 дней)
+2026-01-19 17:01:03,064 - analysis.optimized_analyzer - INFO - Кэш-хит для AKRN (30 дней)
+2026-01-19 17:01:03,066 - analysis.optimized_analyzer - INFO - Кэш-хит для ALRS (30 дней)
+2026-01-19 17:01:03,067 - analysis.core.moex_client - INFO - Загрузка истории для AFKS (720 дней)
+2026-01-19 17:01:03,070 - analysis.core.moex_client - INFO - Загрузка истории для AFLT (720 дней)
+2026-01-19 17:01:03,079 - analysis.core.moex_client - INFO - Загрузка истории для ALRS (720 дней)
+2026-01-19 17:01:03,079 - analysis.core.moex_client - INFO - Загрузка истории для AKRN (720 дней)
+2026-01-19 17:01:04,428 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для ABIO
+2026-01-19 17:01:04,432 - analysis.optimized_analyzer - INFO - Кэш-хит для AMEZ (1 дней)
+2026-01-19 17:01:04,433 - analysis.optimized_analyzer - INFO - Кэш-хит для AMEZ (30 дней)
+2026-01-19 17:01:04,435 - analysis.core.moex_client - INFO - Загрузка истории для AMEZ (720 дней)
+2026-01-19 17:01:04,491 - analysis.core.moex_client - INFO - ✅ Получено 546 записей для ABRD
+2026-01-19 17:01:04,498 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для AFKS
+2026-01-19 17:01:04,499 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для ALRS
+2026-01-19 17:01:04,501 - analysis.core.moex_client - INFO - ✅ Получено 549 записей для AKRN
+2026-01-19 17:01:04,510 - analysis.optimized_analyzer - INFO - Кэш-хит для APRI (1 дней)
+2026-01-19 17:01:04,510 - analysis.optimized_analyzer - INFO - Кэш-хит для APRI (30 дней)
+2026-01-19 17:01:04,513 - analysis.optimized_analyzer - INFO - Кэш-хит для APTK (1 дней)
+2026-01-19 17:01:04,514 - analysis.optimized_analyzer - INFO - Кэш-хит для APTK (30 дней)
+2026-01-19 17:01:04,514 - analysis.core.moex_client - INFO - Загрузка истории для APRI (720 дней)
+2026-01-19 17:01:04,515 - analysis.optimized_analyzer - INFO - Кэш-хит для AQUA (1 дней)
+2026-01-19 17:01:04,517 - analysis.optimized_analyzer - INFO - Кэш-хит для AQUA (30 дней)
+2026-01-19 17:01:04,517 - analysis.optimized_analyzer - INFO - Кэш-хит для ARSA (1 дней)
+2026-01-19 17:01:04,519 - analysis.optimized_analyzer - INFO - Кэш-хит для ARSA (30 дней)
+2026-01-19 17:01:04,520 - analysis.core.moex_client - INFO - Загрузка истории для APTK (720 дней)
+2026-01-19 17:01:04,521 - analysis.core.moex_client - INFO - Загрузка истории для AQUA (720 дней)
+2026-01-19 17:01:04,528 - analysis.core.moex_client - INFO - Загрузка истории для ARSA (720 дней)
+2026-01-19 17:01:04,534 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для AFLT
+2026-01-19 17:01:04,539 - analysis.optimized_analyzer - INFO - Кэш-хит для ASSB (1 дней)
+2026-01-19 17:01:04,541 - analysis.optimized_analyzer - INFO - Кэш-хит для ASSB (30 дней)
+2026-01-19 17:01:04,542 - analysis.core.moex_client - INFO - Загрузка истории для ASSB (720 дней)
+2026-01-19 17:01:04,710 - analysis.core.moex_client - INFO - ✅ Получено 285 записей для AMEZ
+2026-01-19 17:01:04,714 - analysis.optimized_analyzer - INFO - Кэш-хит для ASTR (1 дней)
+2026-01-19 17:01:04,715 - analysis.optimized_analyzer - INFO - Кэш-хит для ASTR (30 дней)
+2026-01-19 17:01:04,717 - analysis.core.moex_client - INFO - Загрузка истории для ASTR (720 дней)
+2026-01-19 17:01:05,084 - analysis.core.moex_client - INFO - ✅ Получено 401 записей для APRI
+2026-01-19 17:01:05,088 - analysis.optimized_analyzer - INFO - Кэш-хит для AVAN (1 дней)
+2026-01-19 17:01:05,088 - analysis.optimized_analyzer - INFO - Кэш-хит для AVAN (30 дней)
+2026-01-19 17:01:05,089 - analysis.core.moex_client - INFO - Загрузка истории для AVAN (720 дней)
+2026-01-19 17:01:05,204 - analysis.core.moex_client - INFO - ✅ Получено 526 записей для ARSA
+2026-01-19 17:01:05,207 - analysis.optimized_analyzer - INFO - Кэш-хит для BANE (1 дней)
+2026-01-19 17:01:05,208 - analysis.optimized_analyzer - INFO - Кэш-хит для BANE (30 дней)
+2026-01-19 17:01:05,209 - analysis.core.moex_client - INFO - Загрузка истории для BANE (720 дней)
+2026-01-19 17:01:05,237 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для ASSB
+2026-01-19 17:01:05,240 - analysis.optimized_analyzer - INFO - Кэш-хит для BANEP (1 дней)
+2026-01-19 17:01:05,241 - analysis.optimized_analyzer - INFO - Кэш-хит для BANEP (30 дней)
+2026-01-19 17:01:05,242 - analysis.core.moex_client - INFO - Загрузка истории для BANEP (720 дней)
+2026-01-19 17:01:05,268 - analysis.core.moex_client - INFO - ✅ Получено 557 записей для APTK
+2026-01-19 17:01:05,272 - analysis.optimized_analyzer - INFO - Кэш-хит для BELU (1 дней)
+2026-01-19 17:01:05,273 - analysis.optimized_analyzer - INFO - Кэш-хит для BELU (30 дней)
+2026-01-19 17:01:05,274 - analysis.core.moex_client - INFO - Загрузка истории для BELU (720 дней)
+2026-01-19 17:01:05,431 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для ASTR
+2026-01-19 17:01:05,435 - analysis.optimized_analyzer - INFO - Кэш-хит для BISVP (1 дней)
+2026-01-19 17:01:05,437 - analysis.optimized_analyzer - INFO - Кэш-хит для BISVP (30 дней)
+2026-01-19 17:01:05,438 - analysis.core.moex_client - INFO - Загрузка истории для BISVP (720 дней)
+2026-01-19 17:01:05,509 - analysis.core.moex_client - INFO - ✅ Получено 558 записей для AQUA
+2026-01-19 17:01:05,513 - analysis.optimized_analyzer - INFO - Кэш-хит для BLNG (1 дней)
+2026-01-19 17:01:05,513 - analysis.optimized_analyzer - INFO - Кэш-хит для BLNG (30 дней)
+2026-01-19 17:01:05,514 - analysis.core.moex_client - INFO - Загрузка истории для BLNG (720 дней)
+2026-01-19 17:01:05,843 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для AVAN
+2026-01-19 17:01:05,846 - analysis.optimized_analyzer - INFO - Кэш-хит для BRZL (1 дней)
+2026-01-19 17:01:05,847 - analysis.optimized_analyzer - INFO - Кэш-хит для BRZL (30 дней)
+2026-01-19 17:01:05,848 - analysis.core.moex_client - INFO - Загрузка истории для BRZL (720 дней)
+2026-01-19 17:01:05,940 - analysis.core.moex_client - INFO - ✅ Получено 561 записей для BANE
+2026-01-19 17:01:05,943 - analysis.optimized_analyzer - INFO - Кэш-хит для BSPB (1 дней)
+2026-01-19 17:01:05,943 - analysis.optimized_analyzer - INFO - Кэш-хит для BSPB (30 дней)
+2026-01-19 17:01:05,944 - analysis.core.moex_client - INFO - Загрузка истории для BSPB (720 дней)
+2026-01-19 17:01:06,087 - analysis.core.moex_client - INFO - ✅ Получено 561 записей для BANEP
+2026-01-19 17:01:06,091 - analysis.optimized_analyzer - INFO - Кэш-хит для BSPBP (1 дней)
+2026-01-19 17:01:06,093 - analysis.optimized_analyzer - INFO - Кэш-хит для BSPBP (30 дней)
+2026-01-19 17:01:06,094 - analysis.core.moex_client - INFO - Загрузка истории для BSPBP (720 дней)
+2026-01-19 17:01:06,133 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для BISVP
+2026-01-19 17:01:06,137 - analysis.optimized_analyzer - INFO - Кэш-хит для CARM (1 дней)
+2026-01-19 17:01:06,138 - analysis.optimized_analyzer - INFO - Кэш-хит для CARM (30 дней)
+2026-01-19 17:01:06,139 - analysis.core.moex_client - INFO - Загрузка истории для CARM (720 дней)
+2026-01-19 17:01:06,292 - analysis.core.moex_client - INFO - ✅ Получено 557 записей для BELU
+2026-01-19 17:01:06,296 - analysis.optimized_analyzer - INFO - Кэш-хит для CBOM (1 дней)
+2026-01-19 17:01:06,297 - analysis.optimized_analyzer - INFO - Кэш-хит для CBOM (30 дней)
+2026-01-19 17:01:06,300 - analysis.core.moex_client - INFO - Загрузка истории для CBOM (720 дней)
+2026-01-19 17:01:06,394 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для BLNG
+2026-01-19 17:01:06,398 - analysis.optimized_analyzer - INFO - Кэш-хит для CHGZ (1 дней)
+2026-01-19 17:01:06,398 - analysis.optimized_analyzer - INFO - Кэш-хит для CHGZ (30 дней)
+2026-01-19 17:01:06,399 - analysis.core.moex_client - INFO - Загрузка истории для CHGZ (720 дней)
+2026-01-19 17:01:06,673 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для BRZL
+2026-01-19 17:01:06,677 - analysis.optimized_analyzer - INFO - Кэш-хит для CHKZ (1 дней)
+2026-01-19 17:01:06,678 - analysis.optimized_analyzer - INFO - Кэш-хит для CHKZ (30 дней)
+2026-01-19 17:01:06,679 - analysis.core.moex_client - INFO - Загрузка истории для CHKZ (720 дней)
+2026-01-19 17:01:06,782 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для BSPB
+2026-01-19 17:01:06,785 - analysis.core.moex_client - INFO - ✅ Получено 525 записей для BSPBP
+2026-01-19 17:01:06,791 - analysis.optimized_analyzer - INFO - Кэш-хит для CHMF (1 дней)
+2026-01-19 17:01:06,791 - analysis.optimized_analyzer - INFO - Кэш-хит для CHMF (30 дней)
+2026-01-19 17:01:06,792 - analysis.optimized_analyzer - INFO - Кэш-хит для CHMK (1 дней)
+2026-01-19 17:01:06,792 - analysis.optimized_analyzer - INFO - Кэш-хит для CHMK (30 дней)
+2026-01-19 17:01:06,793 - analysis.core.moex_client - INFO - Загрузка истории для CHMF (720 дней)
+2026-01-19 17:01:06,795 - analysis.core.moex_client - INFO - Загрузка истории для CHMK (720 дней)
+2026-01-19 17:01:07,000 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для CARM
+2026-01-19 17:01:07,004 - analysis.optimized_analyzer - INFO - Кэш-хит для CNRU (1 дней)
+2026-01-19 17:01:07,006 - analysis.optimized_analyzer - INFO - Кэш-хит для CNRU (30 дней)
+2026-01-19 17:01:07,007 - analysis.core.moex_client - INFO - Загрузка истории для CNRU (720 дней)
+2026-01-19 17:01:07,090 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для CBOM
+2026-01-19 17:01:07,163 - analysis.core.moex_client - INFO - ✅ Получено 526 записей для CHGZ
+2026-01-19 17:01:07,293 - analysis.core.moex_client - INFO - ✅ Получено 247 записей для CNRU
+2026-01-19 17:01:07,340 - analysis.core.moex_client - INFO - ✅ Получено 513 записей для CHKZ
+2026-01-19 17:01:07,464 - analysis.optimized_analyzer - INFO - Кэш-хит для CNTL (1 дней)
+2026-01-19 17:01:07,466 - analysis.optimized_analyzer - INFO - Кэш-хит для CNTL (30 дней)
+2026-01-19 17:01:07,468 - analysis.optimized_analyzer - INFO - Кэш-хит для CNTLP (1 дней)
+2026-01-19 17:01:07,468 - analysis.optimized_analyzer - INFO - Кэш-хит для CNTLP (30 дней)
+2026-01-19 17:01:07,468 - analysis.optimized_analyzer - INFO - Кэш-хит для DATA (1 дней)
+2026-01-19 17:01:07,469 - analysis.optimized_analyzer - INFO - Кэш-хит для DATA (30 дней)
+2026-01-19 17:01:07,470 - analysis.optimized_analyzer - INFO - Кэш-хит для DELI (1 дней)
+2026-01-19 17:01:07,470 - analysis.optimized_analyzer - INFO - Кэш-хит для DELI (30 дней)
+2026-01-19 17:01:07,470 - analysis.core.moex_client - INFO - Загрузка истории для CNTL (720 дней)
+2026-01-19 17:01:07,472 - analysis.core.moex_client - INFO - Загрузка истории для DATA (720 дней)
+2026-01-19 17:01:07,474 - analysis.core.moex_client - INFO - Загрузка истории для CNTLP (720 дней)
+2026-01-19 17:01:07,477 - analysis.core.moex_client - INFO - Загрузка истории для DELI (720 дней)
+2026-01-19 17:01:07,493 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для CHMK
+2026-01-19 17:01:07,497 - analysis.optimized_analyzer - INFO - Кэш-хит для DIAS (1 дней)
+2026-01-19 17:01:07,499 - analysis.optimized_analyzer - INFO - Кэш-хит для DIAS (30 дней)
+2026-01-19 17:01:07,500 - analysis.core.moex_client - INFO - Загрузка истории для DIAS (720 дней)
+2026-01-19 17:01:07,527 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для CHMF
+2026-01-19 17:01:07,533 - analysis.optimized_analyzer - INFO - Кэш-хит для DIOD (1 дней)
+2026-01-19 17:01:07,534 - analysis.optimized_analyzer - INFO - Кэш-хит для DIOD (30 дней)
+2026-01-19 17:01:07,536 - analysis.core.moex_client - INFO - Загрузка истории для DIOD (720 дней)
+2026-01-19 17:01:07,970 - analysis.core.moex_client - INFO - ✅ Получено 388 записей для DATA
+2026-01-19 17:01:07,974 - analysis.optimized_analyzer - INFO - Кэш-хит для DOMRF (1 дней)
+2026-01-19 17:01:08,214 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для CNTLP
+2026-01-19 17:01:08,214 - analysis.core.moex_client - INFO - ✅ Получено 551 записей для DELI
+2026-01-19 17:01:08,230 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для CNTL
+2026-01-19 17:01:08,258 - analysis.core.moex_client - INFO - ✅ Получено 545 записей для DIAS
+2026-01-19 17:01:08,490 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для DIOD
+2026-01-19 17:01:08,539 - analysis.optimized_analyzer - INFO - Кэш-хит для DOMRF (30 дней)
+2026-01-19 17:01:08,551 - analysis.core.moex_client - INFO - Загрузка истории для DOMRF (720 дней)
+2026-01-19 17:01:08,558 - analysis.optimized_analyzer - INFO - Кэш-хит для DVEC (1 дней)
+2026-01-19 17:01:08,560 - analysis.optimized_analyzer - INFO - Кэш-хит для DZRD (1 дней)
+2026-01-19 17:01:08,561 - analysis.optimized_analyzer - INFO - Кэш-хит для DVEC (30 дней)
+2026-01-19 17:01:08,562 - analysis.optimized_analyzer - INFO - Кэш-хит для DZRD (30 дней)
+2026-01-19 17:01:08,563 - analysis.optimized_analyzer - INFO - Кэш-хит для DZRDP (1 дней)
+2026-01-19 17:01:08,563 - analysis.optimized_analyzer - INFO - Кэш-хит для EELT (1 дней)
+2026-01-19 17:01:08,564 - analysis.optimized_analyzer - INFO - Кэш-хит для DZRDP (30 дней)
+2026-01-19 17:01:08,564 - analysis.optimized_analyzer - INFO - Кэш-хит для EELT (30 дней)
+2026-01-19 17:01:08,566 - analysis.optimized_analyzer - INFO - Кэш-хит для ELFV (1 дней)
+2026-01-19 17:01:08,567 - analysis.optimized_analyzer - INFO - Кэш-хит для ELFV (30 дней)
+2026-01-19 17:01:08,568 - analysis.core.moex_client - INFO - Загрузка истории для DVEC (720 дней)
+2026-01-19 17:01:08,571 - analysis.core.moex_client - INFO - Загрузка истории для DZRDP (720 дней)
+2026-01-19 17:01:08,571 - analysis.core.moex_client - INFO - Загрузка истории для DZRD (720 дней)
+2026-01-19 17:01:08,572 - analysis.core.moex_client - INFO - Загрузка истории для EELT (720 дней)
+2026-01-19 17:01:08,574 - analysis.core.moex_client - INFO - Загрузка истории для ELFV (720 дней)
+2026-01-19 17:01:08,629 - analysis.core.moex_client - INFO - ✅ Получено 45 записей для DOMRF
+2026-01-19 17:01:08,633 - analysis.optimized_analyzer - INFO - Кэш-хит для ELMT (1 дней)
+2026-01-19 17:01:08,633 - analysis.optimized_analyzer - INFO - Кэш-хит для ELMT (30 дней)
+2026-01-19 17:01:08,635 - analysis.core.moex_client - INFO - Загрузка истории для ELMT (720 дней)
+2026-01-19 17:01:09,243 - analysis.core.moex_client - INFO - ✅ Получено 526 записей для DZRDP
+2026-01-19 17:01:09,248 - analysis.optimized_analyzer - INFO - Кэш-хит для ENPG (1 дней)
+2026-01-19 17:01:09,249 - analysis.optimized_analyzer - INFO - Кэш-хит для ENPG (30 дней)
+2026-01-19 17:01:09,250 - analysis.core.moex_client - INFO - Загрузка истории для ENPG (720 дней)
+2026-01-19 17:01:09,283 - analysis.core.moex_client - INFO - ✅ Получено 524 записей для DZRD
+2026-01-19 17:01:09,290 - analysis.optimized_analyzer - INFO - Кэш-хит для ETLN (1 дней)
+2026-01-19 17:01:09,291 - analysis.optimized_analyzer - INFO - Кэш-хит для ETLN (30 дней)
+2026-01-19 17:01:09,292 - analysis.core.moex_client - INFO - Загрузка истории для ETLN (720 дней)
+2026-01-19 17:01:09,318 - analysis.core.moex_client - INFO - ✅ Получено 476 записей для ELMT
+2026-01-19 17:01:09,323 - analysis.optimized_analyzer - INFO - Кэш-хит для EUTR (1 дней)
+2026-01-19 17:01:09,324 - analysis.optimized_analyzer - INFO - Кэш-хит для EUTR (30 дней)
+2026-01-19 17:01:09,325 - analysis.core.moex_client - INFO - Загрузка истории для EUTR (720 дней)
+2026-01-19 17:01:09,420 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для DVEC
+2026-01-19 17:01:09,425 - analysis.optimized_analyzer - INFO - Кэш-хит для FEES (1 дней)
+2026-01-19 17:01:09,426 - analysis.optimized_analyzer - INFO - Кэш-хит для FEES (30 дней)
+2026-01-19 17:01:09,427 - analysis.core.moex_client - INFO - Загрузка истории для FEES (720 дней)
+2026-01-19 17:01:09,475 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для EELT
+2026-01-19 17:01:09,480 - analysis.optimized_analyzer - INFO - Кэш-хит для FESH (1 дней)
+2026-01-19 17:01:09,480 - analysis.optimized_analyzer - INFO - Кэш-хит для FESH (30 дней)
+2026-01-19 17:01:09,481 - analysis.core.moex_client - INFO - Загрузка истории для FESH (720 дней)
+2026-01-19 17:01:09,598 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для ELFV
+2026-01-19 17:01:09,602 - analysis.optimized_analyzer - INFO - Кэш-хит для FIXR (1 дней)
+2026-01-19 17:01:09,604 - analysis.optimized_analyzer - INFO - Кэш-хит для FIXR (30 дней)
+2026-01-19 17:01:09,606 - analysis.core.moex_client - INFO - Загрузка истории для FIXR (720 дней)
+2026-01-19 17:01:09,759 - analysis.core.moex_client - INFO - ✅ Получено 133 записей для FIXR
+2026-01-19 17:01:09,763 - analysis.optimized_analyzer - INFO - Кэш-хит для FLOT (1 дней)
+2026-01-19 17:01:09,764 - analysis.optimized_analyzer - INFO - Кэш-хит для FLOT (30 дней)
+2026-01-19 17:01:09,765 - analysis.core.moex_client - INFO - Загрузка истории для FLOT (720 дней)
+2026-01-19 17:01:09,861 - analysis.core.moex_client - INFO - ✅ Получено 475 записей для ETLN
+2026-01-19 17:01:09,865 - analysis.optimized_analyzer - INFO - Кэш-хит для GAZA (1 дней)
+2026-01-19 17:01:09,865 - analysis.optimized_analyzer - INFO - Кэш-хит для GAZA (30 дней)
+2026-01-19 17:01:09,866 - analysis.core.moex_client - INFO - Загрузка истории для GAZA (720 дней)
+2026-01-19 17:01:09,970 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для ENPG
+2026-01-19 17:01:09,974 - analysis.optimized_analyzer - INFO - Кэш-хит для GAZAP (1 дней)
+2026-01-19 17:01:09,976 - analysis.optimized_analyzer - INFO - Кэш-хит для GAZAP (30 дней)
+2026-01-19 17:01:09,977 - analysis.core.moex_client - INFO - Загрузка истории для GAZAP (720 дней)
+2026-01-19 17:01:10,041 - analysis.core.moex_client - INFO - ✅ Получено 561 записей для EUTR
+2026-01-19 17:01:10,047 - analysis.core.moex_client - INFO - Загрузка истории для GAZC (720 дней)
+2026-01-19 17:01:10,171 - analysis.core.moex_client - INFO - ✅ Получено 557 записей для FESH
+2026-01-19 17:01:10,175 - analysis.optimized_analyzer - INFO - Кэш-хит для GAZP (1 дней)
+2026-01-19 17:01:10,176 - analysis.optimized_analyzer - INFO - Кэш-хит для GAZP (30 дней)
+2026-01-19 17:01:10,177 - analysis.core.moex_client - INFO - Загрузка истории для GAZP (720 дней)
+2026-01-19 17:01:10,182 - analysis.core.moex_client - WARNING - Нет данных для GAZC
+2026-01-19 17:01:10,184 - analysis.optimized_analyzer - WARNING - Нет данных для GAZC
+2026-01-19 17:01:10,184 - analysis.optimized_analyzer - WARNING - Нет данных для GAZC
+2026-01-19 17:01:10,185 - analysis.core.moex_client - INFO - Загрузка истории для GAZS (720 дней)
+2026-01-19 17:01:10,240 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для FEES
+2026-01-19 17:01:10,245 - analysis.core.moex_client - INFO - Загрузка истории для GAZT (720 дней)
+2026-01-19 17:01:10,836 - analysis.core.moex_client - WARNING - Нет данных для GAZS
+2026-01-19 17:01:10,838 - analysis.optimized_analyzer - WARNING - Нет данных для GAZS
+2026-01-19 17:01:10,839 - analysis.optimized_analyzer - WARNING - Нет данных для GAZS
+2026-01-19 17:01:10,840 - analysis.optimized_analyzer - INFO - Кэш-хит для GCHE (1 дней)
+2026-01-19 17:01:10,841 - analysis.optimized_analyzer - INFO - Кэш-хит для GCHE (30 дней)
+2026-01-19 17:01:10,842 - analysis.core.moex_client - INFO - Загрузка истории для GCHE (720 дней)
+2026-01-19 17:01:10,881 - analysis.core.moex_client - WARNING - Нет данных для GAZT
+2026-01-19 17:01:10,884 - analysis.optimized_analyzer - WARNING - Нет данных для GAZT
+2026-01-19 17:01:10,885 - analysis.optimized_analyzer - WARNING - Нет данных для GAZT
+2026-01-19 17:01:10,885 - analysis.optimized_analyzer - INFO - Кэш-хит для GECO (1 дней)
+2026-01-19 17:01:10,886 - analysis.optimized_analyzer - INFO - Кэш-хит для GECO (30 дней)
+2026-01-19 17:01:10,887 - analysis.core.moex_client - INFO - Загрузка истории для GECO (720 дней)
+2026-01-19 17:01:10,897 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для FLOT
+2026-01-19 17:01:10,901 - analysis.optimized_analyzer - INFO - Кэш-хит для GEMA (1 дней)
+2026-01-19 17:01:10,902 - analysis.optimized_analyzer - INFO - Кэш-хит для GEMA (30 дней)
+2026-01-19 17:01:10,903 - analysis.core.moex_client - INFO - Загрузка истории для GEMA (720 дней)
+2026-01-19 17:01:10,918 - analysis.core.moex_client - INFO - ✅ Получено 515 записей для GAZAP
+2026-01-19 17:01:10,922 - analysis.optimized_analyzer - INFO - Кэш-хит для GEMC (1 дней)
+2026-01-19 17:01:10,922 - analysis.optimized_analyzer - INFO - Кэш-хит для GEMC (30 дней)
+2026-01-19 17:01:10,923 - analysis.core.moex_client - INFO - Загрузка истории для GEMC (720 дней)
+2026-01-19 17:01:11,082 - analysis.core.moex_client - INFO - ✅ Получено 522 записей для GAZA
+2026-01-19 17:01:11,086 - analysis.optimized_analyzer - INFO - Кэш-хит для GLRX (1 дней)
+2026-01-19 17:01:11,087 - analysis.optimized_analyzer - INFO - Кэш-хит для GLRX (30 дней)
+2026-01-19 17:01:11,088 - analysis.core.moex_client - INFO - Загрузка истории для GLRX (720 дней)
+2026-01-19 17:01:11,112 - analysis.core.moex_client - INFO - ✅ Получено 61 записей для GLRX
+2026-01-19 17:01:11,115 - analysis.optimized_analyzer - INFO - Кэш-хит для GMKN (1 дней)
+2026-01-19 17:01:11,115 - analysis.optimized_analyzer - INFO - Кэш-хит для GMKN (30 дней)
+2026-01-19 17:01:11,116 - analysis.core.moex_client - INFO - Загрузка истории для GMKN (720 дней)
+2026-01-19 17:01:11,384 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для GAZP
+2026-01-19 17:01:11,388 - analysis.optimized_analyzer - INFO - Кэш-хит для GTRK (1 дней)
+2026-01-19 17:01:11,389 - analysis.optimized_analyzer - INFO - Кэш-хит для GTRK (30 дней)
+2026-01-19 17:01:11,390 - analysis.core.moex_client - INFO - Загрузка истории для GTRK (720 дней)
+2026-01-19 17:01:11,554 - analysis.core.moex_client - INFO - ✅ Получено 517 записей для GEMA
+2026-01-19 17:01:11,558 - analysis.optimized_analyzer - INFO - Кэш-хит для HEAD (1 дней)
+2026-01-19 17:01:11,559 - analysis.optimized_analyzer - INFO - Кэш-хит для HEAD (30 дней)
+2026-01-19 17:01:11,559 - analysis.core.moex_client - INFO - Загрузка истории для HEAD (720 дней)
+2026-01-19 17:01:11,614 - analysis.core.moex_client - INFO - ✅ Получено 555 записей для GEMC
+2026-01-19 17:01:11,619 - analysis.optimized_analyzer - INFO - Кэш-хит для HIMCP (1 дней)
+2026-01-19 17:01:11,620 - analysis.optimized_analyzer - INFO - Кэш-хит для HIMCP (30 дней)
+2026-01-19 17:01:11,621 - analysis.core.moex_client - INFO - Загрузка истории для HIMCP (720 дней)
+2026-01-19 17:01:11,654 - analysis.core.moex_client - INFO - ✅ Получено 547 записей для GCHE
+2026-01-19 17:01:11,659 - analysis.optimized_analyzer - INFO - Кэш-хит для HNFG (1 дней)
+2026-01-19 17:01:11,660 - analysis.optimized_analyzer - INFO - Кэш-хит для HNFG (30 дней)
+2026-01-19 17:01:11,660 - analysis.core.moex_client - INFO - Загрузка истории для HNFG (720 дней)
+2026-01-19 17:01:11,978 - analysis.core.moex_client - INFO - ✅ Получено 399 записей для HEAD
+2026-01-19 17:01:11,982 - analysis.optimized_analyzer - INFO - Кэш-хит для HYDR (1 дней)
+2026-01-19 17:01:11,983 - analysis.optimized_analyzer - INFO - Кэш-хит для HYDR (30 дней)
+2026-01-19 17:01:11,985 - analysis.core.moex_client - INFO - Загрузка истории для HYDR (720 дней)
+2026-01-19 17:01:12,030 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для GECO
+2026-01-19 17:01:12,036 - analysis.optimized_analyzer - INFO - Кэш-хит для IGST (1 дней)
+2026-01-19 17:01:12,037 - analysis.optimized_analyzer - INFO - Кэш-хит для IGST (30 дней)
+2026-01-19 17:01:12,039 - analysis.core.moex_client - INFO - Загрузка истории для IGST (720 дней)
+2026-01-19 17:01:12,094 - analysis.core.moex_client - INFO - ✅ Получено 559 записей для GTRK
+2026-01-19 17:01:12,098 - analysis.optimized_analyzer - INFO - Кэш-хит для IGSTP (1 дней)
+2026-01-19 17:01:12,099 - analysis.optimized_analyzer - INFO - Кэш-хит для IGSTP (30 дней)
+2026-01-19 17:01:12,100 - analysis.core.moex_client - INFO - Загрузка истории для IGSTP (720 дней)
+2026-01-19 17:01:12,143 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для GMKN
+2026-01-19 17:01:12,147 - analysis.optimized_analyzer - INFO - Кэш-хит для IRAO (1 дней)
+2026-01-19 17:01:12,148 - analysis.optimized_analyzer - INFO - Кэш-хит для IRAO (30 дней)
+2026-01-19 17:01:12,150 - analysis.core.moex_client - INFO - Загрузка истории для IRAO (720 дней)
+2026-01-19 17:01:12,414 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для HIMCP
+2026-01-19 17:01:12,419 - analysis.optimized_analyzer - INFO - Кэш-хит для IRKT (1 дней)
+2026-01-19 17:01:12,421 - analysis.optimized_analyzer - INFO - Кэш-хит для IRKT (30 дней)
+2026-01-19 17:01:12,424 - analysis.core.moex_client - INFO - Загрузка истории для IRKT (720 дней)
+2026-01-19 17:01:12,552 - analysis.core.moex_client - INFO - ✅ Получено 555 записей для HNFG
+2026-01-19 17:01:12,556 - analysis.optimized_analyzer - INFO - Кэш-хит для IVAT (1 дней)
+2026-01-19 17:01:12,556 - analysis.optimized_analyzer - INFO - Кэш-хит для IVAT (30 дней)
+2026-01-19 17:01:12,558 - analysis.core.moex_client - INFO - Загрузка истории для IVAT (720 дней)
+2026-01-19 17:01:12,935 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для HYDR
+2026-01-19 17:01:12,939 - analysis.optimized_analyzer - INFO - Кэш-хит для JNOS (1 дней)
+2026-01-19 17:01:12,940 - analysis.optimized_analyzer - INFO - Кэш-хит для JNOS (30 дней)
+2026-01-19 17:01:12,940 - analysis.core.moex_client - INFO - Загрузка истории для JNOS (720 дней)
+2026-01-19 17:01:13,013 - analysis.core.moex_client - INFO - ✅ Получено 523 записей для IGSTP
+2026-01-19 17:01:13,018 - analysis.optimized_analyzer - INFO - Кэш-хит для JNOSP (1 дней)
+2026-01-19 17:01:13,019 - analysis.optimized_analyzer - INFO - Кэш-хит для JNOSP (30 дней)
+2026-01-19 17:01:13,021 - analysis.core.moex_client - INFO - Загрузка истории для JNOSP (720 дней)
+2026-01-19 17:01:13,102 - analysis.core.moex_client - INFO - ✅ Получено 526 записей для IGST
+2026-01-19 17:01:13,107 - analysis.optimized_analyzer - INFO - Кэш-хит для KAZT (1 дней)
+2026-01-19 17:01:13,107 - analysis.optimized_analyzer - INFO - Кэш-хит для KAZT (30 дней)
+2026-01-19 17:01:13,108 - analysis.core.moex_client - INFO - Загрузка истории для KAZT (720 дней)
+2026-01-19 17:01:13,178 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для IRKT
+2026-01-19 17:01:13,183 - analysis.optimized_analyzer - INFO - Кэш-хит для KAZTP (1 дней)
+2026-01-19 17:01:13,184 - analysis.optimized_analyzer - INFO - Кэш-хит для KAZTP (30 дней)
+2026-01-19 17:01:13,185 - analysis.core.moex_client - INFO - Загрузка истории для KAZTP (720 дней)
+2026-01-19 17:01:13,203 - analysis.core.moex_client - INFO - ✅ Получено 565 записей для IRAO
+2026-01-19 17:01:13,208 - analysis.optimized_analyzer - INFO - Кэш-хит для KBSB (1 дней)
+2026-01-19 17:01:13,209 - analysis.optimized_analyzer - INFO - Кэш-хит для KBSB (30 дней)
+2026-01-19 17:01:13,210 - analysis.core.moex_client - INFO - Загрузка истории для KBSB (720 дней)
+2026-01-19 17:01:13,230 - analysis.core.moex_client - INFO - ✅ Получено 470 записей для IVAT
+2026-01-19 17:01:13,236 - analysis.optimized_analyzer - INFO - Кэш-хит для KCHE (1 дней)
+2026-01-19 17:01:13,237 - analysis.optimized_analyzer - INFO - Кэш-хит для KCHE (30 дней)
+2026-01-19 17:01:13,238 - analysis.core.moex_client - INFO - Загрузка истории для KCHE (720 дней)
+2026-01-19 17:01:13,940 - analysis.core.moex_client - INFO - ✅ Получено 523 записей для JNOSP
+2026-01-19 17:01:13,943 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KAZT
+2026-01-19 17:01:13,947 - analysis.optimized_analyzer - INFO - Кэш-хит для KCHEP (1 дней)
+2026-01-19 17:01:13,948 - analysis.optimized_analyzer - INFO - Кэш-хит для KFBA (1 дней)
+2026-01-19 17:01:13,949 - analysis.optimized_analyzer - INFO - Кэш-хит для KCHEP (30 дней)
+2026-01-19 17:01:13,949 - analysis.optimized_analyzer - INFO - Кэш-хит для KFBA (30 дней)
+2026-01-19 17:01:13,950 - analysis.core.moex_client - INFO - Загрузка истории для KCHEP (720 дней)
+2026-01-19 17:01:13,952 - analysis.core.moex_client - INFO - Загрузка истории для KFBA (720 дней)
+2026-01-19 17:01:14,053 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KAZTP
+2026-01-19 17:01:14,056 - analysis.optimized_analyzer - INFO - Кэш-хит для KGKC (1 дней)
+2026-01-19 17:01:14,058 - analysis.optimized_analyzer - INFO - Кэш-хит для KGKC (30 дней)
+2026-01-19 17:01:14,059 - analysis.core.moex_client - INFO - Загрузка истории для KGKC (720 дней)
+2026-01-19 17:01:14,105 - analysis.core.moex_client - INFO - ✅ Получено 165 записей для KFBA
+2026-01-19 17:01:14,108 - analysis.optimized_analyzer - INFO - Кэш-хит для KGKCP (1 дней)
+2026-01-19 17:01:14,110 - analysis.optimized_analyzer - INFO - Кэш-хит для KGKCP (30 дней)
+2026-01-19 17:01:14,120 - analysis.core.moex_client - INFO - ✅ Получено 524 записей для KCHE
+2026-01-19 17:01:14,121 - analysis.core.moex_client - INFO - Загрузка истории для KGKCP (720 дней)
+2026-01-19 17:01:14,127 - analysis.optimized_analyzer - INFO - Кэш-хит для KLSB (1 дней)
+2026-01-19 17:01:14,127 - analysis.optimized_analyzer - INFO - Кэш-хит для KLSB (30 дней)
+2026-01-19 17:01:14,128 - analysis.core.moex_client - INFO - Загрузка истории для KLSB (720 дней)
+2026-01-19 17:01:14,279 - analysis.core.moex_client - INFO - ✅ Получено 520 записей для JNOS
+2026-01-19 17:01:14,285 - analysis.optimized_analyzer - INFO - Кэш-хит для KLVZ (1 дней)
+2026-01-19 17:01:14,287 - analysis.optimized_analyzer - INFO - Кэш-хит для KLVZ (30 дней)
+2026-01-19 17:01:14,288 - analysis.core.moex_client - INFO - Загрузка истории для KLVZ (720 дней)
+2026-01-19 17:01:14,360 - analysis.core.moex_client - INFO - ✅ Получено 525 записей для KBSB
+2026-01-19 17:01:14,365 - analysis.optimized_analyzer - INFO - Кэш-хит для KMAZ (1 дней)
+2026-01-19 17:01:14,365 - analysis.optimized_analyzer - INFO - Кэш-хит для KMAZ (30 дней)
+2026-01-19 17:01:14,366 - analysis.core.moex_client - INFO - Загрузка истории для KMAZ (720 дней)
+2026-01-19 17:01:14,505 - analysis.core.moex_client - INFO - ✅ Получено 490 записей для KCHEP
+2026-01-19 17:01:14,508 - analysis.optimized_analyzer - INFO - Кэш-хит для KMEZ (1 дней)
+2026-01-19 17:01:14,509 - analysis.optimized_analyzer - INFO - Кэш-хит для KMEZ (30 дней)
+2026-01-19 17:01:14,510 - analysis.core.moex_client - INFO - Загрузка истории для KMEZ (720 дней)
+2026-01-19 17:01:14,711 - analysis.core.moex_client - INFO - ✅ Получено 419 записей для KGKC
+2026-01-19 17:01:14,715 - analysis.optimized_analyzer - INFO - Кэш-хит для KOGK (1 дней)
+2026-01-19 17:01:14,715 - analysis.optimized_analyzer - INFO - Кэш-хит для KOGK (30 дней)
+2026-01-19 17:01:14,716 - analysis.core.moex_client - INFO - Загрузка истории для KOGK (720 дней)
+2026-01-19 17:01:14,851 - analysis.core.moex_client - INFO - ✅ Получено 419 записей для KGKCP
+2026-01-19 17:01:14,856 - analysis.optimized_analyzer - INFO - Кэш-хит для KRKN (1 дней)
+2026-01-19 17:01:14,857 - analysis.optimized_analyzer - INFO - Кэш-хит для KRKN (30 дней)
+2026-01-19 17:01:14,858 - analysis.core.moex_client - INFO - Загрузка истории для KRKN (720 дней)
+2026-01-19 17:01:15,297 - analysis.core.moex_client - INFO - ✅ Получено 524 записей для KLVZ
+2026-01-19 17:01:15,302 - analysis.optimized_analyzer - INFO - Кэш-хит для KRKNP (1 дней)
+2026-01-19 17:01:15,303 - analysis.optimized_analyzer - INFO - Кэш-хит для KRKNP (30 дней)
+2026-01-19 17:01:15,305 - analysis.core.moex_client - INFO - Загрузка истории для KRKNP (720 дней)
+2026-01-19 17:01:15,432 - analysis.core.moex_client - INFO - ✅ Получено 525 записей для KMEZ
+2026-01-19 17:01:15,434 - analysis.core.moex_client - INFO - ✅ Получено 563 записей для KMAZ
+2026-01-19 17:01:15,440 - analysis.optimized_analyzer - INFO - Кэш-хит для KRKOP (1 дней)
+2026-01-19 17:01:15,440 - analysis.optimized_analyzer - INFO - Кэш-хит для KROT (1 дней)
+2026-01-19 17:01:15,440 - analysis.optimized_analyzer - INFO - Кэш-хит для KRKOP (30 дней)
+2026-01-19 17:01:15,441 - analysis.optimized_analyzer - INFO - Кэш-хит для KROT (30 дней)
+2026-01-19 17:01:15,442 - analysis.core.moex_client - INFO - Загрузка истории для KRKOP (720 дней)
+2026-01-19 17:01:15,444 - analysis.core.moex_client - INFO - Загрузка истории для KROT (720 дней)
+2026-01-19 17:01:15,494 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KLSB
+2026-01-19 17:01:15,498 - analysis.optimized_analyzer - INFO - Кэш-хит для KROTP (1 дней)
+2026-01-19 17:01:15,499 - analysis.optimized_analyzer - INFO - Кэш-хит для KROTP (30 дней)
+2026-01-19 17:01:15,500 - analysis.core.moex_client - INFO - Загрузка истории для KROTP (720 дней)
+2026-01-19 17:01:15,525 - analysis.core.moex_client - INFO - ✅ Получено 491 записей для KOGK
+2026-01-19 17:01:15,529 - analysis.optimized_analyzer - INFO - Кэш-хит для KRSB (1 дней)
+2026-01-19 17:01:15,530 - analysis.optimized_analyzer - INFO - Кэш-хит для KRSB (30 дней)
+2026-01-19 17:01:15,531 - analysis.core.moex_client - INFO - Загрузка истории для KRSB (720 дней)
+2026-01-19 17:01:15,732 - analysis.core.moex_client - INFO - ✅ Получено 484 записей для KRKN
+2026-01-19 17:01:15,736 - analysis.optimized_analyzer - INFO - Кэш-хит для KRSBP (1 дней)
+2026-01-19 17:01:15,737 - analysis.optimized_analyzer - INFO - Кэш-хит для KRSBP (30 дней)
+2026-01-19 17:01:15,739 - analysis.core.moex_client - INFO - Загрузка истории для KRSBP (720 дней)
+2026-01-19 17:01:16,007 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KRKNP
+2026-01-19 17:01:16,013 - analysis.optimized_analyzer - INFO - Кэш-хит для KUZB (1 дней)
+2026-01-19 17:01:16,014 - analysis.optimized_analyzer - INFO - Кэш-хит для KUZB (30 дней)
+2026-01-19 17:01:16,015 - analysis.core.moex_client - INFO - Загрузка истории для KUZB (720 дней)
+2026-01-19 17:01:16,159 - analysis.core.moex_client - INFO - ✅ Получено 518 записей для KROTP
+2026-01-19 17:01:16,163 - analysis.optimized_analyzer - INFO - Кэш-хит для KZOS (1 дней)
+2026-01-19 17:01:16,164 - analysis.optimized_analyzer - INFO - Кэш-хит для KZOS (30 дней)
+2026-01-19 17:01:16,166 - analysis.core.moex_client - INFO - Загрузка истории для KZOS (720 дней)
+2026-01-19 17:01:16,255 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для KRSB
+2026-01-19 17:01:16,259 - analysis.optimized_analyzer - INFO - Кэш-хит для KZOSP (1 дней)
+2026-01-19 17:01:16,260 - analysis.optimized_analyzer - INFO - Кэш-хит для KZOSP (30 дней)
+2026-01-19 17:01:16,261 - analysis.core.moex_client - INFO - Загрузка истории для KZOSP (720 дней)
+2026-01-19 17:01:16,274 - analysis.core.moex_client - INFO - ✅ Получено 526 записей для KRKOP
+2026-01-19 17:01:16,277 - analysis.optimized_analyzer - INFO - Кэш-хит для LEAS (1 дней)
+2026-01-19 17:01:16,279 - analysis.optimized_analyzer - INFO - Кэш-хит для LEAS (30 дней)
+2026-01-19 17:01:16,280 - analysis.core.moex_client - INFO - Загрузка истории для LEAS (720 дней)
+2026-01-19 17:01:16,432 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для KRSBP
+2026-01-19 17:01:16,437 - analysis.optimized_analyzer - INFO - Кэш-хит для LENT (1 дней)
+2026-01-19 17:01:16,438 - analysis.optimized_analyzer - INFO - Кэш-хит для LENT (30 дней)
+2026-01-19 17:01:16,439 - analysis.core.moex_client - INFO - Загрузка истории для LENT (720 дней)
+2026-01-19 17:01:16,623 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KROT
+2026-01-19 17:01:16,627 - analysis.optimized_analyzer - INFO - Кэш-хит для LIFE (1 дней)
+2026-01-19 17:01:16,629 - analysis.optimized_analyzer - INFO - Кэш-хит для LIFE (30 дней)
+2026-01-19 17:01:16,630 - analysis.core.moex_client - INFO - Загрузка истории для LIFE (720 дней)
+2026-01-19 17:01:16,912 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KZOS
+2026-01-19 17:01:16,916 - analysis.core.moex_client - INFO - ✅ Получено 527 записей для KUZB
+2026-01-19 17:01:16,922 - analysis.optimized_analyzer - INFO - Кэш-хит для LKOH (1 дней)
+2026-01-19 17:01:16,923 - analysis.optimized_analyzer - INFO - Кэш-хит для LKOH (30 дней)
+2026-01-19 17:01:16,924 - analysis.core.moex_client - INFO - Загрузка истории для LKOH (720 дней)
+2026-01-19 17:01:17,092 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для KZOSP
+2026-01-19 17:01:17,157 - analysis.core.moex_client - INFO - ✅ Получено 524 записей для LEAS
+2026-01-19 17:01:17,377 - analysis.core.moex_client - INFO - ✅ Получено 557 записей для LENT
+2026-01-19 17:01:18,791 - analysis.core.moex_client - INFO - ✅ Получено 567 записей для LKOH
+2026-01-19 17:01:18,977 - analysis.core.moex_client - INFO - ✅ Получено 541 записей для LIFE
+2026-01-19 17:01:19,101 - analysis.optimized_analyzer - INFO - Кэш сохранён в cache/analysis_cache.json
