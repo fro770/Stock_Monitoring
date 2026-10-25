@@ -140,7 +140,7 @@ def get_total_ram_gb():
             except Exception:
                 pass
     try:
-        return os.sysconf("SC_PAGE_SIZE") * os.sysconf("SC_PHYS_PAGES") / (1024 ** 3)
+        return os.sysconf("SC_PAGE_SIZE") * os.sysconf("SC_PHYS_PAGES") / (1024 ** 3) # type: ignore
     except (ValueError, OSError, AttributeError):
         return None
 
