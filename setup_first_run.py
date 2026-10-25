@@ -37,7 +37,7 @@ import textwrap
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-VENV_DIR = PROJECT_ROOT / ".venv"
+DEFAULT_VENV_NAME = ".venv"
 REQUIREMENTS = PROJECT_ROOT / "requirements.txt"
 
 # Желаемая версия интерпретатора внутри venv (см. PROJECT_DESCRIPTION.md)
@@ -48,6 +48,39 @@ MIN_PY = (3, 10)             # минимально допустимая для 
 IS_WIN = sys.platform.startswith("win")
 IS_MAC = sys.platform == "darwin"
 
+
+def find_existing_venvs():
+    """Ищет уже созданные виртуальные окружения в корне проекта.
+
+    Возвращает {"preferred": путь или None, "all": {имя: путь}}.
+    В приоритете — активное сейчас окружение (определяем по VIRTUAL_ENV),
+    затем .venv, затем любое *.venv / venv* (например .venv_311).
+    """
+    all_found = {}
+    for p in sorted(PROJECT_ROOT.iterdir()):
+        if not p.is_dir():
+            continue
+        py = p / ("Scripts/python.exe" if IS_WIN else "bin/python")
+        if py.exists() and (p.name == DEFAULT_VENV_NAME or
+                            p.name.startswith(".venv") or
+                            p.name.startswith("venv")):
+            all_found[p.name] = p
+
+    preferred = None
+    active = os.environ.get("VIRTUAL_ENV")
+    if active:
+        ap = Path(active).resolve()
+        if ap in all_found.values():
+            preferred = ap
+    if preferred is None and DEFAULT_VENV_NAME in all_found:
+        preferred = all_found[DEFAULT_VENV_NAME]
+    if preferred is None and all_found:
+        preferred = next(iter(all_found.values()))
+    return preferred, all_found
+
+
+PREFERRED_VENV, ALL_VENVS = find_existing_venvs()
+VENV_DIR = PREFERRED_VENV if PREFERRED_VENV else PROJECT_ROOT / DEFAULT_VENV_NAME
 VENV_PY = VENV_DIR / ("Scripts/python.exe" if IS_WIN else "bin/python")
 
 LINKS = {
@@ -289,25 +322,99 @@ def step_python():
 
 
 # ================================================ ШАГ 4: виртуальное окружение
+def _venv_python_version(py_path):
+    out = run([str(py_path), "-c",
+               "import sys;print('.'.join(map(str,sys.version_info[:3])))"])
+    return out.stdout.strip() if out.returncode == 0 else "?"
+
+
+def create_venv(python_exe, quiet=False):
+    """Создаёт venv; при отказе ensurepip повторяет с --without-pip + get-pip.py."""
+    out = run([python_exe, "-m", "venv", str(VENV_DIR)], timeout=300)
+    err = (out.stderr or out.stdout or "").strip()
+    if out.returncode != 0 or not VENV_PY.exists():
+        # Fallback: окружения без pip (актуально для Linux-сборок Python из исходников,
+        # где не установлен ensurepip). На Windows этот путь обычно не требуется.
+        if "ensurepip" in err and not IS_WIN:
+            if not quiet:
+                say(INFO, "VENV", "ensurepip недоступен — создаю окружение без pip и доустанавливаю pip через get-pip.py ...")
+            out2 = run([python_exe, "-m", "venv", "--without-pip", str(VENV_DIR)], timeout=300)
+            if out2.returncode == 0 and VENV_PY.exists():
+                gp = VENV_DIR / "get-pip.py"
+                try:
+                    import urllib.request
+                    urllib.request.urlretrieve("https://bootstrap.pypa.io/get-pip.py", str(gp))
+                    out3 = run([str(VENV_PY), str(gp)], timeout=600)
+                    gp.unlink(missing_ok=True)
+                    if out3.returncode == 0:
+                        return True, ""
+                    err = (out3.stderr or out3.stdout or "get-pip.py завершился с ошибкой").strip()
+                except Exception as e:
+                    err = f"не удалось скачать get-pip.py: {e}"
+            else:
+                err = (out2.stderr or out2.stdout or err).strip()
+        return False, err[:400]
+    return True, ""
+
+
 def step_venv(python_exe, check_only):
+    venv_name = VENV_DIR.name
     print("\n" + "=" * 70)
-    print("ШАГ 4/7. Виртуальное окружение (.venv)")
+    print(f"ШАГ 4/7. Виртуальное окружение ({venv_name})")
     print("=" * 70)
+
+    # Если нашлось несколько окружений — предупреждаем и выбираем активное/лучшее
+    if len(ALL_VENVS) > 1:
+        names = ", ".join(sorted(ALL_VENVS))
+        say(WARN, "VENV", f"В корне проекта найдено несколько окружений: {names}. "
+                          f"Работаю с: {venv_name}"
+                          + (" (активное сейчас)" if os.environ.get("VIRTUAL_ENV") else "") + ".")
+        others = [n for n in sorted(ALL_VENVS) if n != venv_name]
+        print(f"  ➤ РЕКОМЕНДАЦИЯ: удалите лишние, чтобы не путаться: "
+              f"Windows: Remove-Item -Recurse -Force {', '.join(others)} | "
+              f"Linux/macOS: rm -rf {' '.join(others)}")
+
     if VENV_PY.exists():
-        out = run([str(VENV_PY), "-c", "import sys;print('.'.join(map(str,sys.version_info[:3])))"])
-        ver = out.stdout.strip() if out.returncode == 0 else "?"
+        ver = _venv_python_version(VENV_PY)
         say(OK, "VENV", f"Окружение уже существует: {VENV_DIR} (Python {ver})")
+        if venv_name != DEFAULT_VENV_NAME:
+            say(INFO, "VENV", f"Использую ваше окружение «{venv_name}», новое «{DEFAULT_VENV_NAME}» создавать НЕ буду.")
+        # Python внутри существующего venv должен совпадать с целевой версией проекта (3.11.x)
         try:
-            if ver != "?" and tuple(int(x) for x in ver.split(".")[:2]) < MIN_PY:
-                say(WARN, "VENV", f"Python внутри .venv ({ver}) слишком старый. "
-                                  f"➤ Исправление: удалите папку .venv и перезапустите скрипт.")
+            vt = tuple(int(x) for x in ver.split(".")[:2]) if ver != "?" else None
+            if vt is not None and vt < MIN_PY:
+                say(WARN, "VENV", f"Python внутри {venv_name} ({ver}) слишком старый (< 3.10). "
+                                  f"➤ Исправление: удалите папку {venv_name} и перезапустите скрипт.")
                 return False
+            if vt is not None and vt != TARGET_PY and python_exe is not None:
+                sys_ver_str = run([python_exe, "-c",
+                                   "import sys;print('.'.join(map(str,sys.version_info[:2])))"]).stdout.strip()
+                if sys_ver_str == ".".join(map(str, TARGET_PY)):
+                    say(WARN, "VENV", f"Python в {venv_name} — {ver}, а проект рассчитан на {TARGET_PY_STR}. "
+                                      f"Пакеты из requirements.txt могут не встать.")
+                    if ask(f"Удалить {venv_name} и пересоздать его на Python {'.'.join(map(str, TARGET_PY))}? ",
+                           default_yes=True):
+                        shutil.rmtree(VENV_DIR)
+                        say(INFO, "VENV", f"«{venv_name}» удалён. Пересоздаю окружение ...")
+                        created, err = create_venv(python_exe)
+                        if not created:
+                            say(ERR, "VENV", f"Не удалось пересоздать окружение: {err[:300]}")
+                            print("  ➤ КАК ИСПРАВИТЬ: создайте окружение вручную и перезапустите скрипт:")
+                            print(f"      Windows: py -3.11 -m venv {venv_name}")
+                            print(f"      Linux/macOS: python3.11 -m venv {venv_name}")
+                            return False
+                        say(OK, "VENV", f"Окружение {venv_name} создано заново (Python {_venv_python_version(VENV_PY)}).")
+                        say(INFO, "VENV", "Обновляю pip в окружении ...")
+                        run([str(VENV_PY), "-m", "pip", "install", "--upgrade", "pip"], timeout=300)
+                        return True
+                    say(INFO, "VENV", "Оставляю окружение как есть — при проблемах установки пакетов "
+                                      f"удалите {venv_name} и перезапустите скрипт.")
         except ValueError:
             pass
         return True
 
     if check_only:
-        say(WARN, "VENV", "Окружение .venv отсутствует (режим --check-only: создавать не буду).")
+        say(WARN, "VENV", f"Окружение отсутствует (режим --check-only: создавать не буду).")
         return False
 
     if python_exe is None:
@@ -315,9 +422,8 @@ def step_venv(python_exe, check_only):
         return False
 
     say(INFO, "VENV", f"Создаю виртуальное окружение: {VENV_DIR} (интерпретатор: {python_exe}) ...")
-    out = run([python_exe, "-m", "venv", str(VENV_DIR)], timeout=300)
-    if out.returncode != 0 or not VENV_PY.exists():
-        err = (out.stderr or out.stdout or "").strip()
+    created, err = create_venv(python_exe)
+    if not created:
         say(ERR, "VENV", f"Не удалось создать окружение: {err[:300]}")
         print(textwrap.dedent("""
           ➤ КАК ИСПРАВИТЬ:
@@ -371,7 +477,11 @@ def step_install(check_only):
     say(INFO, "PIP", (f"Не хватает: {', '.join(missing_core)}. Доустанавливаю ..." if pkgs
                       else "Пакеты не установлены. Установка займёт 5–20 минут и ~3–4 ГБ на диске ..."))
     if not ask("Запустить установку сейчас?", default_yes=True):
-        say(WARN, "PIP", "Установка пропущена по вашему решению — проект не готов к работе.")
+        say(ERR, "PIP", "Установка пропущена по вашему решению — проект НЕ готов к работе "
+                        "(библиотеки отсутствуют, модули не импортируются).")
+        print(f"  ➤ КАК ИСПРАВИТЬ: перезапустите скрипт и ответьте «y» на вопрос об установке:")
+        print(f"      Windows: {VENV_DIR / ('Scripts/python.exe' if IS_WIN else 'bin/python')} setup_first_run.py")
+        print(f"      Linux/macOS: {VENV_PY} setup_first_run.py")
         return False
 
     # PyTorch ставим отдельно с CPU-индекса (обычный PyPI тянет CUDA-сборку ~2.5 ГБ)
@@ -533,7 +643,10 @@ def step_moex():
 
 # ============================================================ Итоговый отчёт
 def activate_hint():
-    return r".venv\Scripts\activate" if IS_WIN else "source .venv/bin/activate"
+    rel = VENV_DIR.relative_to(PROJECT_ROOT) if VENV_DIR != PROJECT_ROOT else VENV_DIR
+    if IS_WIN:
+        return str(rel / "Scripts" / "activate")
+    return f"source {rel / 'bin' / 'activate'}"
 
 
 def summary(setup_ok, arch_ok):

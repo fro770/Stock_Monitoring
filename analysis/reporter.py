@@ -252,7 +252,7 @@ class ReportGenerator:
             
             # Лист с графиками
             ws_charts = wb.create_sheet("Графики")
-            self._add_charts_sheet(ws_charts)
+            self._add_charts_sheet(wb, ws_charts)
             
             # Сохраняем файл
             wb.save(filepath)
@@ -484,16 +484,162 @@ class ReportGenerator:
             column_letter = get_column_letter(col_idx)
             ws.column_dimensions[column_letter].width = 13
     
-    def _add_charts_sheet(self, ws_charts):
-        """Добавляет лист с графиками (заглушка для будущего расширения)"""
+    def _add_charts_sheet(self, wb, ws_charts):
+        """Добавляет лист «Графики» с реальными PNG-визуализациями (matplotlib).
+
+        Если matplotlib недоступен — рисует нативный Excel bar-chart по данным
+        листа «Топ акции», чтобы отчёт не оставался пустым.
+        """
+        png_paths = self._generate_chart_images()
+        if not png_paths:
+            self._add_native_excel_chart(wb, ws_charts)
+            return
+
+        from openpyxl.drawing.image import Image as XLImage
         ws_charts['A1'] = "📈 ГРАФИКИ И ВИЗУАЛИЗАЦИИ"
         ws_charts['A1'].font = Font(name='Calibri', size=14, bold=True, color=self.colors['header_bg'])
-        
-        ws_charts['A3'] = "Здесь будут графики распределения прогнозов"
-        ws_charts['A5'] = "и другие визуализации в будущих версиях"
-        
-        ws_charts.column_dimensions['A'].width = 40
-    
+        ws_charts.column_dimensions['A'].width = 2
+
+        anchor_row = 3
+        for title, img_path in png_paths:
+            try:
+                img = XLImage(img_path)
+                ratio = min(1.0, 900 / max(img.width, 1))
+                img.width = int(img.width * ratio)
+                img.height = int(img.height * ratio)
+                ws_charts.cell(row=anchor_row, column=2, value=title).font = self.fonts['bold']
+                ws_charts.add_image(img, f"B{anchor_row + 1}")
+                anchor_row += int(img.height / 19) + 4   # примерная высота строк
+            except Exception as e:
+                logger.warning(f"Не удалось вставить график {img_path}: {e}")
+
+    def _generate_chart_images(self):
+        """Строит PNG-графики анализа; возвращает список (заголовок, путь)."""
+        try:
+            import matplotlib
+            matplotlib.use("Agg")
+            import matplotlib.pyplot as plt
+            import matplotlib.ticker as mtick
+        except ImportError:
+            logger.warning("matplotlib не установлен — используется native Excel-график")
+            return []
+
+        paths = []
+        charts_dir = os.path.join(Config.REPORTS_DIR, "charts")
+        os.makedirs(charts_dir, exist_ok=True)
+
+        df = self._build_dataframe()
+        if df.empty:
+            return []
+
+        # русские заголовки -> машинные имена для графиков
+        df = df.rename(columns={
+            'Тикер': 'ticker',
+            'Средний рост %': 'avg_change_percent',
+            'Средняя уверенность %': 'avg_confidence_pct',
+        })
+        df['avg_change_percent'] = pd.to_numeric(df.get('avg_change_percent'), errors='coerce')
+        df['avg_confidence'] = pd.to_numeric(df.get('avg_confidence_pct'), errors='coerce') / 100.0
+        df = df.dropna(subset=['ticker', 'avg_change_percent'])
+
+        try:
+            # 1. Топ-15 прогнозируемого роста
+            top = df.nlargest(min(15, len(df)), 'avg_change_percent').sort_values('avg_change_percent')
+            fig, ax = plt.subplots(figsize=(9, 6), dpi=110)
+            colors = ['#2e7d32' if v > 0 else '#c62828' for v in top['avg_change_percent']]
+            ax.barh(top['ticker'], top['avg_change_percent'], color=colors)
+            ax.set_xlabel('Прогнозируемое изменение, %')
+            ax.set_title('Топ-15 акций по прогнозируемому росту')
+            ax.grid(axis='x', alpha=.3)
+            p = os.path.join(charts_dir, f"top_growth_{self.timestamp}.png")
+            fig.tight_layout(); fig.savefig(p); plt.close(fig)
+            paths.append(("Топ-15 по прогнозируемому росту", p))
+
+            # 2. Уверенность vs прогноз (размер пузыря = уверенность)
+            fig, ax = plt.subplots(figsize=(9, 6), dpi=110)
+            sc = ax.scatter(df['avg_confidence'] * 100, df['avg_change_percent'],
+                            s=df['avg_confidence'] * 200 + 20,
+                            c=df['avg_change_percent'], cmap='RdYlGn', alpha=.75,
+                            edgecolor='black', linewidth=.5)
+            ax.axhline(0, color='gray', lw=.8, ls='--')
+            ax.set_xlabel('Средняя уверенность, %')
+            ax.set_ylabel('Прогнозируемое изменение, %')
+            ax.set_title('Карта тикеров: уверенность против прогноза роста')
+            fig.colorbar(sc, ax=ax, label='Изменение, %')
+            ax.grid(alpha=.3)
+            p = os.path.join(charts_dir, f"conf_vs_change_{self.timestamp}.png")
+            fig.tight_layout(); fig.savefig(p); plt.close(fig)
+            paths.append(("Уверенность × прогноз (пузырьковая карта)", p))
+
+            # 3. Распределение прогнозов по горизонтам (boxplot)
+            data_box, labels = [], []
+            for d in self.params.get('prediction_days', []):
+                col = f'Изменение {d} дн. %'
+                if col in df:
+                    vals = pd.to_numeric(df[col], errors='coerce').dropna().values
+                    if len(vals):
+                        data_box.append(vals); labels.append(f"{d} дн")
+                if len(data_box) >= 2:   # boxplot осмысленн при ≥2 горизонтах
+                    fig, ax = plt.subplots(figsize=(9, 5), dpi=110)
+                    bp = ax.boxplot(data_box, tick_labels=labels, patch_artist=True)
+                    for patch in bp['boxes']:
+                        patch.set_facecolor('#bbdefb')
+                    ax.axhline(0, color='gray', lw=.8, ls='--')
+                    ax.set_ylabel('Прогнозируемое изменение, %')
+                    ax.set_title('Распределение прогнозов по горизонтам')
+                    ax.grid(axis='y', alpha=.3)
+                    p = os.path.join(charts_dir, f"horizons_{self.timestamp}.png")
+                    fig.tight_layout(); fig.savefig(p); plt.close(fig)
+                    paths.append(("Распределение по горизонтам прогноза", p))
+
+            # 4. Гистограмма распределения уверенности
+            fig, ax = plt.subplots(figsize=(9, 4.5), dpi=110)
+            ax.hist(df['avg_confidence'] * 100, bins=20, color='#64b5f6', edgecolor='white')
+            ax.xaxis.set_major_formatter(mtick.PercentFormatter())
+            ax.set_xlabel('Средняя уверенность модели, %')
+            ax.set_ylabel('Количество тикеров')
+            ax.set_title('Распределение уверенности прогнозов')
+            ax.grid(axis='y', alpha=.3)
+            p = os.path.join(charts_dir, f"confidence_hist_{self.timestamp}.png")
+            fig.tight_layout(); fig.savefig(p); plt.close(fig)
+            paths.append(("Распределение уверенности", p))
+        except Exception as e:
+            logger.error(f"Ошибка генерации графиков: {e}")
+            return []
+
+        return paths
+
+    def _add_native_excel_chart(self, wb, ws_charts):
+        """Фолбэк без matplotlib: нативный bar-chart по листу «Топ акции»."""
+        try:
+            from openpyxl.chart import BarChart, Reference
+            ws_charts['A1'] = "📈 График (native Excel)"
+            ws_charts['A1'].font = Font(name='Calibri', size=14, bold=True, color=self.colors['header_bg'])
+            ws_main = wb["Топ акции"]
+            headers = [ws_main.cell(row=1, column=c).value for c in range(1, ws_main.max_column + 1)]
+            t_idx = (headers.index('ticker') + 1) if 'ticker' in headers else 1
+            ch_idx = None
+            for i, h in enumerate(headers):
+                hs = str(h).lower() if h else ''
+                if 'рост' in hs or 'change' in hs:
+                    ch_idx = i + 1
+                    break
+            if ch_idx:
+                n_rows = min(ws_main.max_row, 21)
+                chart = BarChart(); chart.type = "bar"; chart.title = "Топ прогнозируемого роста"
+                data = Reference(ws_main, min_col=ch_idx, min_row=1, max_row=n_rows)
+                cats = Reference(ws_main, min_col=t_idx, min_row=2, max_row=n_rows)
+                chart.add_data(data, titles_from_data=True)
+                chart.set_categories(cats)
+                chart.height, chart.width = 12, 24
+                ws_charts.add_chart(chart, "A3")
+            else:
+                ws_charts['A3'] = "Графики недоступны (установите matplotlib: pip install matplotlib)"
+        except Exception as e:
+            logger.warning(f"Native chart тоже не удался: {e}")
+            ws_charts['A3'] = "Графики недоступны (установите matplotlib)"
+
+
     def print_console_report(self):
         """Выводит красивый отчет в консоль"""
         if not self.results:

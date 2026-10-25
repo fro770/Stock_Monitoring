@@ -1,21 +1,3 @@
-# Виртуальное окружение Python
-venv/
-env/
-ENV/
-.venv/
-.env/
-venv_py313/
-moex_analysis_env/
-# Файлы базы данных SQLite (опционально, если не хочешь коммитить данные)
-
-# Логи
-*.log
-
-# Кэш Python
-*/__pycache__/
-*.py[cod]
-*$py.class
-
-
-# VS Code
-.vscode/
+__pycache__/
+*.pyc
+reports/
