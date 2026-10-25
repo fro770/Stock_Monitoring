@@ -1,3 +1,13 @@
 __pycache__/
 *.pyc
 reports/
+
+# Виртуальное окружение Python
+.venv_311/
+venv_311/
+.venv_311
+env/
+ENV/
+.venv/
+.env/
+venv_py313/
