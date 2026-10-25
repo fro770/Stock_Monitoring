@@ -12,6 +12,7 @@ moex_analysis_env/
 
 # Логи
 *.log
+reports/
 
 # Кэш Python
 */__pycache__/
