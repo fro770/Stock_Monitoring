@@ -4,6 +4,10 @@ from datetime import datetime
 import logging
 import os
 
+# Корень проекта (скрипт лежит в analysis/scripts/)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+os.chdir(PROJECT_ROOT)
+
 # Настройка логирования
 os.makedirs("logs", exist_ok=True)
 logging.basicConfig(

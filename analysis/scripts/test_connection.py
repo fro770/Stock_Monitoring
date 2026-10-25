@@ -6,10 +6,13 @@
 import sys
 import os
 
-# Добавляем путь к модулям
+# Добавляем путь к модулям (скрипт лежит в analysis/scripts/)
 current_dir = os.path.dirname(os.path.abspath(__file__))
-if current_dir not in sys.path:
-    sys.path.insert(0, current_dir)
+project_root = os.path.dirname(os.path.dirname(current_dir))
+for p in (project_root, current_dir):
+    if p not in sys.path:
+        sys.path.insert(0, p)
+os.chdir(project_root)
 
 import pandas as pd
 from colorama import Fore, Style, init as colorama_init

@@ -32,6 +32,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 from analysis.core.data_loader import DataLoader
+from analysis.core.config import Config
 from analysis.core.validator import DataValidator
 from analysis.analyzer import StockAnalyzer
 from analysis.reporter import ReportGenerator
@@ -569,16 +570,99 @@ def show_settings():
         print(Fore.RED + f"❌ Ошибка: {e}")
 
 
-def main():
-    """Главная функция"""
+
+DEFAULT_PARAMS = {
+    'top_n': 20,
+    'stock_type': 1,
+    'mode': 2,
+    'prediction_days': [1, 7, 14, 30],
+    'min_confidence': 0.5,
+}
+
+
+def run_analysis_programmatically(params: dict = None, progress_cb=None):
+    """Программный запуск анализа без интерактивного ввода (для GUI/CLI).
+
+    Args:
+        params: словарь параметров (см. DEFAULT_PARAMS)
+        progress_cb: необязательный callback(message: str) для UI
+
+    Returns:
+        (results, files): список результатов анализа и dict путей к отчётам
+    """
+    p = {**DEFAULT_PARAMS, **(params or {})}
+    p['prediction_days'] = list(p.get('prediction_days') or DEFAULT_PARAMS['prediction_days'])
+
+    def report(msg):
+        logger.info(msg)
+        if progress_cb:
+            try:
+                progress_cb(str(msg))
+            except Exception:
+                pass
+
+    # При необходимости — автоматическая инициализация БД при первом запуске
+    from analysis.core.db_manager import DatabaseManager
+    from analysis.core.runtime import has_tickers
+    if not has_tickers():
+        report("База данных пуста — выполняется первичная инициализация...")
+        DatabaseManager().init_first_run(progress_cb=lambda m: report(m))
+
+    report("Инициализация анализатора...")
+    analyzer = StockAnalyzer(
+        stock_type=p['stock_type'],
+        mode=p['mode'],
+        prediction_days=p['prediction_days'],
+        min_confidence=p['min_confidence'],
+    )
+
+    report("Загрузка тикеров из базы данных...")
+    tickers = analyzer.load_tickers()
+    if not tickers:
+        raise RuntimeError(
+            "База данных не содержит тикеров. Сначала выполните инициализацию БД."
+        )
+    report(f"Загружено {len(tickers)} тикеров. Начало анализа...")
+
+    start_time = datetime.now()
+    results = analyzer.analyze_all(tickers)
+    duration = (datetime.now() - start_time).total_seconds()
+    report(f"Анализ завершён за {duration:.1f} сек ({len(results)} тикеров)")
+
+    if not results:
+        return [], {}
+
+    filtered = analyzer.filter_by_confidence(results)
+    if not filtered:
+        report("Нет тикеров с достаточной уверенностью — возвращены все результаты")
+        filtered = results
+
+    filtered.sort(key=lambda x: x.get('avg_change_percent', 0), reverse=True)
+    top_results = filtered[: int(p['top_n'])]
+
+    report("Генерация отчётов...")
+    reporter = ReportGenerator(top_results, p)
+    files = {
+        'excel': reporter.generate_excel_report(),
+        'csv': reporter.generate_csv_report(),
+        'json': reporter.generate_json_report(),
+    }
+    files = {k: v for k, v in files.items() if v}
+
+    report(f"Готово! Топ-{len(top_results)} акций, отчёты сохранены")
+    return top_results, files
+
+
+def cli_main():
+    """Консольное интерактивное меню (fallback без GUI)."""
     print_banner()
-    
+
     while True:
         try:
             print_menu()
-            
+
             choice = input(Fore.YELLOW + "🎯 Ваш выбор (0-5): ").strip()
-            
+
             if choice == '0':
                 print(Fore.CYAN + "\n👋 До свидания!")
                 break
@@ -594,9 +678,9 @@ def main():
                 show_settings()
             else:
                 print(Fore.RED + "❌ Неверный выбор. Попробуйте снова.")
-            
+
             print()  # Пустая строка для разделения
-            
+
         except KeyboardInterrupt:
             print(Fore.YELLOW + "\n👋 До свидания!")
             break
@@ -605,23 +689,21 @@ def main():
             print(Fore.RED + f"\n❌ Неожиданная ошибка: {e}")
 
 
-import os
+def main():
+    """Главная функция: запускает графический интерфейс (или CLI-fallback)."""
+    Config.ensure_directories()
 
-# Добавляем корень проекта в путь
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-if PROJECT_ROOT not in sys.path:
-    sys.path.insert(0, PROJECT_ROOT)
+    # Если есть аргументы командной строки --no-gui или недоступен GUI — консоль
+    force_cli = '--no-gui' in sys.argv
+    if not force_cli:
+        try:
+            from analysis.ui.app import run_gui
+            return run_gui()
+        except Exception as e:
+            print(Fore.YELLOW + f"⚠️  GUI недоступен ({e}), запускаю консольную версию")
 
-# Запускаем главный модуль
-from analysis.main import main
+    return cli_main()
+
 
 if __name__ == "__main__":
-    # Проверяем наличие необходимых директорий
-    try:
-        from analysis.core.config import Config
-        Config.ensure_directories()
-    except:
-        pass
-    
-    # Запускаем главное меню
     main()
